@@ -1,25 +1,17 @@
  /* Manuel González Santos  -   UO279387*/
- /**Especificidad 001*/
- header{
-    display:flex;
-    flex-direction: column;
- }
-  /**Especificidad: 001*/
-  nav{
-    display:grid;
-    grid-template-columns: repeat(4,auto); 
-  }
-   /**Especificidad: 002*/
- nav>a{
+/**Especificidad: 001*/
+nav{
+  display:grid;
+  grid-template-columns: repeat(3,auto); 
+  gap: 1em;
   text-align: center;
-  margin: 0.5em;
- }
-  /**Especificidad: 001*/
-  h1,h2,h3{
-    text-align: center;
-   }
-    /**Especificidad: 001*/
- ul,ol,dl {
+}
+/**Especificidad: 001*/
+h1,h2,h3{
+  text-align: center;
+  }
+/**Especificidad: 001*/
+ul,ol,dl {
   /**Sobreescribe la propiedad left de padding*/
   padding-left: 2em;
 }
@@ -37,42 +29,30 @@ table {
  tfoot th {
    text-align: left;
  }
- /**Especificidad: 001*/
- th {
-   letter-spacing: 0.1em;
-}
- /**Especificidad: 001*/
- main{
+
+/**Especificidad: 002*/
+section>article, aside>article,picture{
   display: flex;
-  justify-content: center;
-  align-items: center;
- }
-  /**Especificidad: 002*/
-  main>section{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 1em;
-    margin:0.5em;
-    padding:0.5em;
-   }
+  flex-direction: column;
+  justify-items: center;
+}
 
 @media only screen and (max-width: 465px) {
   /**Especificidad:001*/
   video {
-    width: 40%;
-    height: auto;
+    width: auto;
+    height: 10em;
     }
 }
 @media only screen and (max-width: 799px) {
   video {
-    width: 50%;
-    height: auto;
+    width: auto;
+    height: 20em;
     }
 }
 @media only screen and (min-width: 800px) {
   video {
-    width: 60%;
-    height: auto;
+    width: auto;
+    height: 30em;
     }
 }

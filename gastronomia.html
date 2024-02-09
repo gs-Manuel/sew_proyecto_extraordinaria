@@ -1,19 +1,121 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
+    <title>Explorando Marruecos - Gastronomía Típica</title>
+    <meta name="author" content="Manuel González Santos"/>
+    <meta name="description" content="Información sobre la gastronomía típica Marroquí"/>
+    <meta name ="keywords" content = "HTML5,CSS"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <link rel="stylesheet" type="text/css" href="estilo/estilo.css"/>
+    <link rel="stylesheet" type="text/css" href="estilo/layout.css"/>
 </head>
 <body>
-    <nav>
-        <a tabindex="1" accesskey="i" href="index.html">Página Principal</a>
-        <a tabindex="2" accesskey="g" href="gastronomia.html">Gastronomia</a>
-        <a tabindex="3" accesskey="r" href="rutas.html">Rutas</a>
-        <a tabindex="4" accesskey="m" href="metereologia.html">Metereología</a>
-        <a tabindex="5" accesskey="j" href="juego.html">Juego</a>
-        <a tabindex="6" accesskey="e" href="reservas.html">Reservas</a>
-    </nav>
-    
+    <!-- Datos con el contenidos que aparece en el navegador -->
+    <header>
+        <h1>Explorando Marruecos</h1>
+        <nav>
+            <a tabindex="1" accesskey="i" href="index.html">Página Principal</a>
+            <a tabindex="2" accesskey="g" href="gastronomia.html">Gastronomía</a>
+            <a tabindex="3" accesskey="r" href="rutas.html">Rutas</a>
+            <a tabindex="4" accesskey="m" href="metereologia.html">Metereología</a>
+            <a tabindex="5" accesskey="j" href="juego.html">Juego</a>
+            <a tabindex="6" accesskey="e" href="reservas.html">Reservas</a>
+        </nav>
+    </header>
+    <!--<main> Por qué no?--> 
+        <h2>Gastronomía Típica</h2>
+        <section>
+            <h3>Platos Principales, Acompañamientos y Postres</h3>
+            <ol>
+                <li>Platos Principales
+                    <ul>
+                        <li>Cuscús</li>
+                        <li>Mechoui</li>
+                        <li>Tajín </li>
+                    </ul>
+                </li>
+                <li>Acompañamientos
+                    <ul>
+                        <li>Harira</li>
+                        <li>Zaalouk</li>
+                        <li>Briouats</li>
+                        <li>Ensalada Marroquí</li>
+                    </ul>
+                </li>
+                <li> Postres
+                    <ul>
+                        <li>Almendras garrapiñadas</li>
+                        <li>Chabakia</li>
+                        <li>Baghrir</li>
+                    </ul>
+                </li>
+            </ol>
+            <picture>
+                <!--No se puede utilizar el atributo .width o .height.
+                     Sería mezclar contenido con visualización-->
+                <source media="(max-width: 465px)" srcset="multimedia/imagenes/Tajine.jpg" />
+                <source media="(max-width: 799px)" srcset="multimedia/imagenes/Tajine.jpg" />
+                <source media="(min-width: 800px)" srcset="multimedia/imagenes/Tajine.jpg" />
+                <img src="multimedia/imagenes/Tajine.jpg" alt="FotoRetrato" />
+            </picture>
+        </section>
+        <section>
+        <h3>Variantes del cuscús clásico</h3>
+            <dl>
+                <dt>Cuscús Tunecino</dt>
+                <dd>La salsa de cuscús de Túnez es siempre roja, debido al tomate o la salsa de tomate que se usa</dd>
+                <dt>Cuscús TFaya</dt>
+                <dd>Conocido por el uso de la cebolla caramelizada, pasas y almendras, el término 'Tfaya' hace referencia a estos 3 ingredientes</dd>
+                <dt>Cuscús dulce</dt>
+                <dd>Servido comúnmente como postre, es cocinado al vapor pero endulzado con leche o jugo de frutas</dd>
+                <dt>Cuscús de cordero</dt>
+                <dd>Se emplea únicamente cordero cocinado lentamente con especias aromáticas como comino, cilantro y canela</dd>
+                <dt>Cuscús de sémola integral</dt>
+                <dd>En lugar de utilizar sémola de trigo refinada, esta variante del cuscús se prepara con sémola de trigo integral, que conserva más nutrientes y fibra</dd>
+            </dl>
+            <article>
+                <h4>Tutorial de como cocinar cuscús</h4>
+                <video controls preload="auto">
+                    <source src="multimedia/videos/CocinaCuscus.mp4" type="video/mp4" />
+                    <source src="multimedia/videos/CocinaCuscus.webm" type="video/webm" />
+                </video>
+            </article>
+        </section>
+        <aside>
+            <!--Esta tabla tiene que ser accesible-->
+            <table>
+                <caption>Información de Marruecos</caption>
+                <tr>
+                  <th scope="col" id="Aspecto">Aspecto</th>
+                  <th scope="col" id="Datos">Datos</th>
+                  <th scope="col" id="Fuente">Fuente</th>
+                </tr>
+                <tr>
+                  <td scope="row" id="Geografía">Geografía</td>
+                  <td headers="Datos Geografía">Superficie: 446,550 km²-Población</td>
+                  <td headers="Fuente Geografía">CIA World Factbook</td>
+                </tr>
+                <tr>
+                  <td scope="row" id="Cultura">Cultura</td>
+                  <td headers="Datos Cultura">Idiomas Oficiales: Árabe, Bereber</td>
+                  <td headers="Fuente Cultura">Ministerio de Cultura de Marruecos</td>
+                </tr>
+                <tr>
+                  <td scope="row" id="Economía">Economía</td>
+                  <td headers="Datos Economía">PIB (nominal): $122.1 mil millones (2020)</td>
+                  <td headers="Fuente Economía">Banco Mundial</td>
+                </tr>
+              </table>
+              <article>
+                <h4>MOHAMED VI se congratula por el cambio de posición del Gobierno de España sobre el Sáhara</h4>
+                <audio controls preload="auto">
+                    <source src="multimedia/audios/Mohamed6.mp3" type="audio/mp3" />
+                    <source src="multimedia/audios/Mohamed6.opus" type="audio/opus" />
+                    <source src="multimedia/audios/Mohamed6.wav" type="audio/wav" />
+                </audio>
+              </article>
+        </aside>
+    <!--</main>-->   
 </body>
 </html>

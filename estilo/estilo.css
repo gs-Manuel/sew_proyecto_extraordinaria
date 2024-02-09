@@ -17,7 +17,7 @@
   background-color:#93bbc8;
  }
  /**Especificidad: 001*/
- h1,h2,h3{
+ h1,h2,h3,caption{
     color:#003060;
  }
   /**Especificidad: 001*/
@@ -31,7 +31,7 @@
     font-size:3em;
  }
  /**Especificidad:001*/
- h3{
+ h3,caption{
     font-size:1.5em;
  }
  /**Especcificidad: 011*/
@@ -61,6 +61,7 @@
 section > ul > li:nth-of-type(3){
    color: #DF265E;
 }
+
 /**Especificidad: 001*/
 li,dd,dt {
   line-height: 1.4em;
@@ -70,9 +71,18 @@ dt {
   font-weight: bold;
 }
 /**Especificidad: 001*/
-table {
+td{
+  border: 0.1em solid rgb(80, 143, 12);
+}
+/**Especificidad: 001*/
+table{
   background-color: #ECF86F;
-   border: 0.1em solid rgb(80, 143, 12);
+   border-collapse: collapse;
+ }
+/**Especificidad: 001*/
+  th {
+    border: 0.1em solid rgb(80, 143, 12);
+    letter-spacing: 0.1em;
  }
  /**Especificidad: 002*/
  main>section{

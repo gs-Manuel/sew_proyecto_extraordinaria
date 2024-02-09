@@ -1,19 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
+    <title>Explorando Marruecos - Metereología</title>
+    <meta name="author" content="Manuel González Santos"/>
+    <meta name="description" content="Información sobre la Metereología actual en Marruecos" />
+    <meta name ="keywords" content = "HTML5,CSS"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <link rel="stylesheet" type="text/css" href="estilo/estilo.css"/>
+    <link rel="stylesheet" type="text/css" href="estilo/layout.css"/>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </head>
 <body>
-    <nav>
-        <a tabindex="1" accesskey="i" href="index.html">Página Principal</a>
-        <a tabindex="2" accesskey="g" href="gastronomia.html">Gastronomia</a>
-        <a tabindex="3" accesskey="r" href="rutas.html">Rutas</a>
-        <a tabindex="4" accesskey="m" href="metereologia.html">Metereología</a>
-        <a tabindex="5" accesskey="j" href="juego.html">Juego</a>
-        <a tabindex="6" accesskey="e" href="reservas.html">Reservas</a>
-    </nav>
-    
+    <header>
+        <h1>Explorando Marruecos</h1>
+        <nav>
+            <a tabindex="1" accesskey="i" href="index.html">Página Principal</a>
+            <a tabindex="2" accesskey="g" href="gastronomia.html">Gastronomía</a>
+            <a tabindex="3" accesskey="r" href="rutas.html">Rutas</a>
+            <a tabindex="4" accesskey="m" href="metereologia.html">Metereología</a>
+            <a tabindex="5" accesskey="j" href="juego.html">Juego</a>
+            <a tabindex="6" accesskey="e" href="reservas.html">Reservas</a>
+        </nav>
+    </header>
+    <h2>Metereología</h2>
 </body>
+<!--Importacion a js despues de body por que hasta que no se cree el body no se pueden hacer query selector-->
+<script src="js/pais.js"></script>
+<script>
+    var pais = new Pais("Marruecos", "Rabat", 36000000);
+    document.write("<article></article>");
+    var infoMarruecos = document.querySelector("article");
+    infoMarruecos.innerHTML = "<h3>"+pais.getNombre()+"</h3>";
+    infoMarruecos.innerHTML += "<h4> Información principal</h4>";   
+    infoMarruecos.innerHTML += "<p> Capital: "+pais.getCapital()+"</p>";
+    infoMarruecos.innerHTML += "<p> Número de habitantes: "+pais.getCantidadPoblacion()+" personas</p>";
+    pais.escribirCoordenadasCapital();
+    infoMarruecos.innerHTML += "<h4> Más información</h4>";
+    infoMarruecos.innerHTML += pais.getInformacionSecundario();
+    infoMarruecos.innerHTML += "<h3>Previsión del tiempo durante los próximos 5 días</h3>";
+    pais.obtenerPrevisionTiempo();
+    document.close();
+</script>
 </html>

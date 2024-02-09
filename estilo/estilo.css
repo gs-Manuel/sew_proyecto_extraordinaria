@@ -1,0 +1,109 @@
+ /* Manuel González Santos  -   UO279387*/
+ /**Especificidad: 001*/
+ body{
+    color:#253703;
+    font-family: "sans-serif";
+    background-color: #B1D4E0;
+    font-size:1.3em;
+ }
+ /**Especificidad: 001*/
+ nav{
+  font-size: 1.3em;
+  color:#003060;
+ }
+ /**Especificidad: 002*/
+ nav>a{
+  border-color: #003060;
+  background-color:#93bbc8;
+ }
+ /**Especificidad: 001*/
+ h1,h2,h3{
+    color:#003060;
+ }
+  /**Especificidad: 001*/
+ h1{
+    font-size:4em;
+    text-transform: uppercase;
+ }
+ /**Especificidad: 001*/
+ h2{
+  background-color: #68BBE3;
+    font-size:3em;
+ }
+ /**Especificidad:001*/
+ h3{
+    font-size:1.5em;
+ }
+ /**Especcificidad: 011*/
+ a:link {
+   color: #0C2D48
+ }
+  /**Especcificidad: 011*/
+ a:visited {
+   color: #7F3E71;
+ }
+  /**Especcificidad: 011*/
+ a:focus {
+   border-bottom: 0.1em solid;
+   background: #0C2D48;
+ }
+/**Especcificidad: 011*/
+ a:hover {
+   border-bottom: 0.1em solid;
+   background: #68BBE3;
+ }
+  /**Especcificidad: 011*/
+ a:active {
+   background: #7F3E71;
+   color: #cdfeaa;
+ }
+/**Especificidad: 013*/
+section > ul > li:nth-of-type(3){
+   color: #DF265E;
+}
+/**Especificidad: 001*/
+li,dd,dt {
+  line-height: 1.4em;
+}
+/**Especificidad: 001*/
+dt {
+  font-weight: bold;
+}
+/**Especificidad: 001*/
+table {
+  background-color: #ECF86F;
+   border: 0.1em solid rgb(80, 143, 12);
+ }
+ /**Especificidad: 002*/
+ main>section{
+  border: 0.1em solid rgb(80, 143, 12);
+  background-color: #bae498;
+ }
+ @media only screen and (max-width: 600px) {
+  /**Especificidad: 001*/
+nav{
+ font-size: 1em;
+}
+/**Especificidad: 002*/
+nav>a{
+ margin: 0.1em;
+}
+   /**Especificidad:001*/
+body{
+ font-size:1em;
+}
+  /**Especificidad:001*/
+ h1{
+   font-size:2.5em;
+ }
+  /**Especificidad:001*/
+ h2{
+   font-size:1.5em;
+ }
+  /**Especificidad:001*/
+ h3{
+   font-size:1.1em;
+ }
+
+}
+

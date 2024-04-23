@@ -2,18 +2,17 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Explorando Marruecos - Gastronomía Típica</title>
+    <title>Explorando Murcia - Gastronomía Típica</title>
     <meta name="author" content="Manuel González Santos"/>
-    <meta name="description" content="Información sobre la gastronomía típica Marroquí"/>
+    <meta name="description" content="Información sobre la gastronomía típica murciana"/>
     <meta name ="keywords" content = "HTML5,CSS"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="estilo/estilo.css"/>
     <link rel="stylesheet" type="text/css" href="estilo/layout.css"/>
 </head>
 <body>
-    <!-- Datos con el contenidos que aparece en el navegador -->
     <header>
-        <h1>Explorando Marruecos</h1>
+        <h1>Explorando Murcia</h1>
         <nav>
             <a tabindex="1" accesskey="i" href="index.html">Página Principal</a>
             <a tabindex="2" accesskey="g" href="gastronomia.html">Gastronomía</a>
@@ -23,56 +22,60 @@
             <a tabindex="6" accesskey="e" href="reservas.html">Reservas</a>
         </nav>
     </header>
-    <!--<main> Por qué no?--> 
         <h2>Gastronomía Típica</h2>
         <section>
-            <h3>Platos Principales, Acompañamientos y Postres</h3>
+            <h3>Influencias vecinas</h3>
+            <ul>
+                <li>Cocina manchega</li>
+                <li>Cocina valenciana</li>
+                <li>Cocina granadina</li>
+            </ul>
+        </section>
+        <section>
+            <h3>Top 3 de cada tipo de plato</h3>
             <ol>
-                <li>Platos Principales
-                    <ul>
-                        <li>Cuscús</li>
-                        <li>Mechoui</li>
-                        <li>Tajín </li>
-                    </ul>
+                <li>Primeros
+                    <ol>
+                        <li>Ensalada murciana</li>
+                        <li>Pisto</li>
+                        <li>Michirones</li>
+                    </ol>
                 </li>
-                <li>Acompañamientos
-                    <ul>
-                        <li>Harira</li>
-                        <li>Zaalouk</li>
-                        <li>Briouats</li>
-                        <li>Ensalada Marroquí</li>
-                    </ul>
+                <li>Segundos
+                    <ol>
+                        <li>Arroz con conejo</li>
+                        <li>Zarangollo</li>
+                        <li>Pastel de carne murciano</li>
+                    </ol>
                 </li>
-                <li> Postres
-                    <ul>
-                        <li>Almendras garrapiñadas</li>
-                        <li>Chabakia</li>
-                        <li>Baghrir</li>
-                    </ul>
+                <li>Postres
+                    <ol>
+                        <li>Cabello de ángel</li>
+                        <li>Paparajotes</li>
+                        <li>Torta de pascua</li>
+                    </ol>
                 </li>
             </ol>
             <picture>
                 <!--No se puede utilizar el atributo .width o .height.
                      Sería mezclar contenido con visualización-->
-                <source media="(max-width: 465px)" srcset="multimedia/imagenes/Tajine.jpg" />
-                <source media="(max-width: 799px)" srcset="multimedia/imagenes/Tajine.jpg" />
-                <source media="(min-width: 800px)" srcset="multimedia/imagenes/Tajine.jpg" />
-                <img src="multimedia/imagenes/Tajine.jpg" alt="FotoRetrato" />
+                <source media="(max-width: 465px)" srcset="multimedia/imagenes/tajine_50.jpg" />
+                <source media="(max-width: 799px)" srcset="multimedia/imagenes/tajine_25.jpg" />
+                <source media="(min-width: 800px)" srcset="multimedia/imagenes/tajine.jpg" />
+                <img src="multimedia/imagenes/tajine.jpg" alt="FotoRetrato" />
             </picture>
         </section>
         <section>
-        <h3>Variantes del cuscús clásico</h3>
+        <h3>Bebidas</h3>
             <dl>
-                <dt>Cuscús Tunecino</dt>
-                <dd>La salsa de cuscús de Túnez es siempre roja, debido al tomate o la salsa de tomate que se usa</dd>
-                <dt>Cuscús TFaya</dt>
-                <dd>Conocido por el uso de la cebolla caramelizada, pasas y almendras, el término 'Tfaya' hace referencia a estos 3 ingredientes</dd>
-                <dt>Cuscús dulce</dt>
-                <dd>Servido comúnmente como postre, es cocinado al vapor pero endulzado con leche o jugo de frutas</dd>
-                <dt>Cuscús de cordero</dt>
-                <dd>Se emplea únicamente cordero cocinado lentamente con especias aromáticas como comino, cilantro y canela</dd>
-                <dt>Cuscús de sémola integral</dt>
-                <dd>En lugar de utilizar sémola de trigo refinada, esta variante del cuscús se prepara con sémola de trigo integral, que conserva más nutrientes y fibra</dd>
+                <dt>Café Asiático</dt>
+                <dd>Carajillo de café con leche condensada, acompañado de Licor 43</dd>
+                <dt>Café Belmonte</dt>
+                <dd>café expreso con un poco de leche condensada y un chorro de brandy</dd>
+                <dt>El Reparo</dt>
+                <dd>Mezcla de coñac y vino dulce a partes iguales</dd>
+                <dt>La Láguena</dt>
+                <dd>Mezcla de anís y vino dulce a partes iguales</dd>
             </dl>
             <article>
                 <h4>Tutorial de como cocinar cuscús</h4>

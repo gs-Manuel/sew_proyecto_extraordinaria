@@ -7,7 +7,7 @@ nav{
   text-align: center;
 }
 /**Especificidad: 001*/
-h1,h2,h3{
+h1,h2,h3,h4{
   text-align: center;
   }
 /**Especificidad: 001*/
@@ -34,8 +34,10 @@ table {
 section>article, aside>article,picture{
   display: flex;
   flex-direction: column;
-  justify-items: center;
+ justify-content: center;
 }
+
+
 
 @media only screen and (max-width: 465px) {
   /**Especificidad:001*/

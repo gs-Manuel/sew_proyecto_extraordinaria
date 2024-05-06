@@ -10,29 +10,20 @@ nav{
 h1,h2,h3,h4{
   text-align: center;
   }
-/**Especificidad: 001*/
-ul,ol,dl {
-  /**Sobreescribe la propiedad left de padding*/
-  padding-left: 2em;
-}
- /*//En columna esta bien*/
-/**Especificidad: 001*/
-table {
-   table-layout: fixed;
-   width: 100%;
- }
- /**Especificidad: 002*/
- tbody td {
-   text-align: center;
- }
- /**Especificidad: 002*/
- tfoot th {
-   text-align: left;
- }
  /**Especificidad: 001*/
 picture{
     max-width: 100%;
     height: auto;
+}
+ /**Especificidad: 001*/
+table{
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+}
+ /**Especificidad: 002*/
+nav>a{
+  margin: 0.1em;
 }
 @media only screen and (max-width: 465px) {
   /**Especificidad:001*/
@@ -47,6 +38,7 @@ picture{
     width: auto;
     height: 15em;
     }
+
 }
 @media only screen and (min-width: 800px) {
     /**Especificidad:001*/

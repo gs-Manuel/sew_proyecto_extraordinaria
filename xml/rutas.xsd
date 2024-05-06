@@ -1,5 +1,9 @@
-<?xml version="1.0" encoding="Windows-1252"?>
-<xs:schema xmlns="http://tempuri.org/rutas" elementFormDefault="qualified" targetNamespace="http://tempuri.org/rutas" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<?xml version="1.0" encoding="UTF-8"?>
+<!--cambie codificacion a UTF-->
+<xs:schema xmlns="https://uniovi.es"
+           elementFormDefault="qualified"
+           targetNamespace="https://uniovi.es"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:element name="rutas">
     <xs:complexType>
       <xs:sequence>
@@ -20,16 +24,16 @@
         <xs:element ref="lugarInicio" />
         <xs:element ref="direccionInicio" />
         <xs:element ref="coordenadasDireccionInicio" />
-        <xs:element ref="referencia" />
-        <xs:element ref="referencia" />
-        <xs:element minOccurs="1" maxOccurs="unbounded" ref="referencia" />
+        <!--cambie el minimo de referencia a 3-->
+        <xs:element minOccurs="3" maxOccurs="unbounded" ref="referencia" />
         <xs:element ref="recomendacion" />
-        <xs:element ref="hito" />
-        <xs:element ref="hito" />
-        <xs:element minOccurs="1" maxOccurs="unbounded" ref="hito" />
+        <!--cambie el minimo de hito a 3-->
+        <xs:element minOccurs="3" maxOccurs="unbounded" ref="hito" />
       </xs:sequence>
-      <xs:attribute name="fechaInicio" type="xs:string" />
-      <xs:attribute name="horaInicio" type="xs:string" />
+      <!--Cambio el tipo de fechaInicio de string a date-->
+      <xs:attribute name="fechaInicio" type="xs:date" />
+      <!--Cambio el tipo de horaInicio de string a dateTime-->
+      <xs:attribute name="horaInicio" type="xs:dateTime" />
     </xs:complexType>
   </xs:element>
   <xs:element name="nombre" type="xs:string" />
@@ -55,7 +59,15 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="recomendacion" type="xs:string" />
+  <!-- Añado restriccion para la recomendacion y cambio de string a integer -->
+  <xs:element name="recomendacion">
+    <xs:simpleType >
+      <xs:restriction base="xs:integer">
+        <xs:minInclusive value="0" />
+        <xs:maxInclusive value="10" />
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
   <xs:element name="hito">
     <xs:complexType>
       <xs:sequence>
@@ -77,15 +89,16 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="longitud" type="xs:string" />
-  <xs:element name="latitud" type="xs:string" />
-  <xs:element name="altitud" type="xs:string" />
+  <!-- Cambio el tipo de longitud, latitud y altitud de string a double-->
+  <xs:element name="longitud" type="xs:double" />
+  <xs:element name="latitud" type="xs:double" />
+  <xs:element name="altitud" type="xs:double" />
   <xs:element name="enlace" type="xs:string" />
   <xs:element name="galeria_fotografias">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="fotografia" />
-        <xs:element minOccurs="0" maxOccurs="unbounded" ref="fotografia" />
+        <!-- Cambio el minimo y maximo de fotografias en la galeria_fotografias-->
+        <xs:element minOccurs="1" maxOccurs="5" ref="fotografia" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -99,7 +112,7 @@
   <xs:element name="galeria_videos">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" maxOccurs="unbounded" ref="video" />
+        <xs:element minOccurs="0" maxOccurs="3" ref="video" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

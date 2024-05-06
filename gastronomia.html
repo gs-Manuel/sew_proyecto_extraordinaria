@@ -44,6 +44,12 @@
                 <li>Segundos
                     <ol>
                         <li>Arroz con conejo</li>
+                        <picture>
+                            <source media="(max-width: 465px)" srcset="multimedia/imagenes/arroz-con-conejo-y-caracoles-50.jpg" />
+                            <source media="(max-width: 799px)" srcset="multimedia/imagenes/arroz-con-conejo-y-caracoles-75.jpg" />
+                            <source media="(min-width: 800px)" srcset="multimedia/imagenes/arroz-con-conejo-y-caracoles-100.jpg" />
+                            <img src="multimedia/imagenes/arroz-con-conejo-y-caracoles-100.jpg" alt="Foto de arroz con conejo y caracoles" />
+                        </picture>
                         <li>Zarangollo</li>
                         <li>Pastel de carne murciano</li>
                     </ol>
@@ -56,14 +62,7 @@
                     </ol>
                 </li>
             </ol>
-            <picture>
-                <!--No se puede utilizar el atributo .width o .height.
-                     Sería mezclar contenido con visualización-->
-                <source media="(max-width: 465px)" srcset="multimedia/imagenes/tajine_50.jpg" />
-                <source media="(max-width: 799px)" srcset="multimedia/imagenes/tajine_25.jpg" />
-                <source media="(min-width: 800px)" srcset="multimedia/imagenes/tajine.jpg" />
-                <img src="multimedia/imagenes/tajine.jpg" alt="FotoRetrato" />
-            </picture>
+
         </section>
         <section>
         <h3>Bebidas</h3>
@@ -86,28 +85,27 @@
             </article>
         </section>
         <aside>
-            <!--Esta tabla tiene que ser accesible-->
             <table>
-                <caption>Información de Marruecos</caption>
+                <caption>Información General de Murcia</caption>
                 <tr>
-                  <th scope="col" id="Aspecto">Aspecto</th>
-                  <th scope="col" id="Datos">Datos</th>
-                  <th scope="col" id="Fuente">Fuente</th>
+                  <th scope="col" id="Dato">Dato</th>
+                  <th scope="col" id="Informacion">Información</th>
                 </tr>
                 <tr>
-                  <td scope="row" id="Geografía">Geografía</td>
-                  <td headers="Datos Geografía">Superficie: 446,550 km²-Población</td>
-                  <td headers="Fuente Geografía">CIA World Factbook</td>
+                  <th scope="row" id="Ubicacion">Ubicación</th>
+                  <td headers="Informacion Ubicacion">En el sureste de España, en la región de Murcia.</td>
                 </tr>
                 <tr>
-                  <td scope="row" id="Cultura">Cultura</td>
-                  <td headers="Datos Cultura">Idiomas Oficiales: Árabe, Bereber</td>
-                  <td headers="Fuente Cultura">Ministerio de Cultura de Marruecos</td>
+                  <th scope="row" id="Poblacion">Población</th>
+                  <td headers="Informacion Poblacion">Aproximadamente 450,000 habitantes.</td>
                 </tr>
                 <tr>
-                  <td scope="row" id="Economía">Economía</td>
-                  <td headers="Datos Economía">PIB (nominal): $122.1 mil millones (2020)</td>
-                  <td headers="Fuente Economía">Banco Mundial</td>
+                  <th scope="row" id="Clima">Clima</th>
+                  <td headers="Informacion Clima">Mediterráneo, con veranos calurosos e inviernos suaves.</td>
+                </tr>
+                <tr>
+                    <th scope="row" id="Economia">Economía</th>
+                    <td headers="Informacion Economia">Basada en la agricultura, el turismo y la industria.</td>
                 </tr>
               </table>
               <article>

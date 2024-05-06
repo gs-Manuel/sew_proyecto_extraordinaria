@@ -29,12 +29,10 @@ table {
  tfoot th {
    text-align: left;
  }
-
-/**Especificidad: 002*/
-section>article, aside>article,picture{
-  display: flex;
-  flex-direction: column;
- justify-content: center;
+ /**Especificidad: 001*/
+picture{
+    max-width: 100%;
+    height: auto;
 }
 
 

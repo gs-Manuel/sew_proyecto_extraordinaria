@@ -34,9 +34,6 @@ picture{
     max-width: 100%;
     height: auto;
 }
-
-
-
 @media only screen and (max-width: 465px) {
   /**Especificidad:001*/
   video {
@@ -45,14 +42,16 @@ picture{
     }
 }
 @media only screen and (max-width: 799px) {
+    /**Especificidad:001*/
   video {
     width: auto;
-    height: 20em;
+    height: 15em;
     }
 }
 @media only screen and (min-width: 800px) {
+    /**Especificidad:001*/
   video {
     width: auto;
-    height: 30em;
+    height: 20em;
     }
 }

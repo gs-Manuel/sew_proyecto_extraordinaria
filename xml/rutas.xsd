@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<xs:schema xmlns="http://tempuri.org/rutas" elementFormDefault="qualified" targetNamespace="http://tempuri.org/rutas" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="rutas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="unbounded" ref="ruta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ruta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="nombre" />
+        <xs:element ref="tipoRuta" />
+        <xs:element ref="medioTransporte" />
+        <xs:element ref="duracionRuta" />
+        <xs:element ref="agencia" />
+        <xs:element ref="descripcion" />
+        <xs:element ref="personasAdecuadas" />
+        <xs:element ref="lugarInicio" />
+        <xs:element ref="direccionInicio" />
+        <xs:element ref="coordenadasDireccionInicio" />
+        <xs:element ref="referencia" />
+        <xs:element ref="referencia" />
+        <xs:element minOccurs="1" maxOccurs="unbounded" ref="referencia" />
+        <xs:element ref="recomendacion" />
+        <xs:element ref="hito" />
+        <xs:element ref="hito" />
+        <xs:element minOccurs="1" maxOccurs="unbounded" ref="hito" />
+      </xs:sequence>
+      <xs:attribute name="fechaInicio" type="xs:string" />
+      <xs:attribute name="horaInicio" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="nombre" type="xs:string" />
+  <xs:element name="tipoRuta" type="xs:string" />
+  <xs:element name="medioTransporte" type="xs:string" />
+  <xs:element name="duracionRuta" type="xs:string" />
+  <xs:element name="agencia" type="xs:string" />
+  <xs:element name="descripcion" type="xs:string" />
+  <xs:element name="personasAdecuadas" type="xs:string" />
+  <xs:element name="lugarInicio" type="xs:string" />
+  <xs:element name="direccionInicio" type="xs:string" />
+  <xs:element name="coordenadasDireccionInicio">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="coordenadas" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="referencia">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="unbounded" ref="enlace" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="recomendacion" type="xs:string" />
+  <xs:element name="hito">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="nombre" />
+        <xs:element ref="descripcion" />
+        <xs:element ref="coordenadas" />
+        <xs:element ref="galeria_fotografias" />
+        <xs:element ref="galeria_videos" />
+      </xs:sequence>
+      <xs:attribute name="distanciaEntreHitos" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="coordenadas">
+    <xs:complexType>
+      <xs:sequence minOccurs="0" maxOccurs="1">
+        <xs:element ref="longitud" />
+        <xs:element ref="latitud" />
+        <xs:element ref="altitud" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="longitud" type="xs:string" />
+  <xs:element name="latitud" type="xs:string" />
+  <xs:element name="altitud" type="xs:string" />
+  <xs:element name="enlace" type="xs:string" />
+  <xs:element name="galeria_fotografias">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="fotografia" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="fotografia" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fotografia">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="enlace" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="galeria_videos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="video" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="video">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="enlace" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

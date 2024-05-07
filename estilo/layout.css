@@ -28,19 +28,14 @@ nav>a{
  /**Especificidad: 002*/
 article>section{
   display:flex;
+  justify-content: space-between;
+  align-items: center;
 }
  /**Especificidad: 003*/
 article>section>img{
   width:33%;
   height: auto;
-  overflow: hidden;
 }
- /**Especificidad: 011*/
- article>*:not(:first-child){
-   display:flex;
-   justify-content: space-between;
-   align-items: center;
- }
 @media only screen and (max-width: 465px) {
   /**Especificidad:001*/
   video {

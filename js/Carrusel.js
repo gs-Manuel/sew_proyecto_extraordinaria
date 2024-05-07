@@ -9,7 +9,6 @@ class Carrusel{
         this.showImage(this);
     }
      showImage(carrusel) {
-        debugger;
          const images = carrusel.imageContainer.querySelectorAll('img');
          const numImages = images.length;
         for(let i = 0;i<numImages;i++){
@@ -22,19 +21,16 @@ class Carrusel{
     }
      nextImage() {
          const images = this.imageContainer.querySelectorAll('img');
-        this.currentIndex = (this.currentIndex + 1) % images.length;
-        this.showImage(this);
+         this.currentIndex = (this.currentIndex + 1) % images.length;
+         this.showImage(this);
     }
-
      prevImage() {
          const images = this.imageContainer.querySelectorAll('img');
-        this.currentIndex = (this.currentIndex - 1 + images.length) % images.length;
-        this.showImage(this);
+         this.currentIndex = (this.currentIndex - 1 + images.length) % images.length;
+         this.showImage(this);
     }
     addEventListeners(carrusel){
         carrusel.buttonNext.addEventListener('click', this.nextImage.bind(carrusel));
         carrusel.buttonPrev.addEventListener('click', this.prevImage.bind(carrusel));
     }
-
-
 }

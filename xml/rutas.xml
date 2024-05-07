@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rutas xmlns="https://uniovi.es"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="https://uniovi.es rutas.xsd">
+    <ruta fechaInicio="2024-05-01" horaInicio="2024-05-01T09:00:00">
+        <nombre>Ruta de los Molinos</nombre>
+        <tipoRuta>Arquitectura y Monumentos</tipoRuta>
+        <medioTransporte>A pie</medioTransporte>
+        <duracionRuta>2 horas</duracionRuta>
+        <agencia>Sin agencia</agencia>
+        <descripcion>Ruta que recorre los molinos históricos de la región de Murcia.</descripcion>
+        <personasAdecuadas>Personas en buena forma física</personasAdecuadas>
+        <lugarInicio>Plaza del Ayuntamiento</lugarInicio>
+        <direccionInicio>Calle Mayor</direccionInicio>
+        <coordenadasDireccionInicio>
+            <coordenadas>
+                <longitud>-1.1303</longitud>
+                <latitud>37.9866</latitud>
+                <altitud>50</altitud>
+            </coordenadas>
+        </coordenadasDireccionInicio>
+        <referencia>
+            <enlace>https://es.wikipedia.org/wiki/Ruta_de_los_Molinos</enlace>
+        </referencia>
+        <referencia>
+            <enlace>https://www.murciaturistica.es</enlace>
+        </referencia>
+        <referencia>
+            <enlace>https://www.regmurcia.com</enlace>
+        </referencia>
+        <recomendacion>8</recomendacion>
+        <hito distanciaEntreHitos="1 km">
+            <nombre>Molino del Tío Pacorro</nombre>
+            <descripcion>Antiguo molino restaurado.</descripcion>
+            <coordenadas>
+                <longitud>-1.1205</longitud>
+                <latitud>37.9824</latitud>
+                <altitud>60</altitud>
+            </coordenadas>
+            <galeria_fotografias>
+                <fotografia>
+                    <enlace>multimedia/fotos/molino_1.jpg</enlace>
+                </fotografia>
+                <fotografia>
+                    <enlace>multimedia/fotos/molino_2.jpg</enlace>
+                </fotografia>
+            </galeria_fotografias>
+            <galeria_videos>
+                <video>
+                    <enlace>multimedia/videos/molino_360.mp4</enlace>
+                </video>
+            </galeria_videos>
+        </hito>
+        <hito distanciaEntreHitos="1.5 km">
+            <nombre>Molino de la Luz</nombre>
+            <descripcion>Antiguo molino de agua restaurado.</descripcion>
+            <coordenadas>
+                <longitud>-1.1322</longitud>
+                <latitud>37.9818</latitud>
+                <altitud>55</altitud>
+            </coordenadas>
+            <galeria_fotografias>
+                <fotografia>
+                    <enlace>multimedia/fotos/molino_luz_1.jpg</enlace>
+                </fotografia>
+                <fotografia>
+                    <enlace>multimedia/fotos/molino_luz_2.jpg</enlace>
+                </fotografia>
+            </galeria_fotografias>
+            <galeria_videos>
+                <video>
+                    <enlace>multimedia/videos/molino_luz_panorama.mp4</enlace>
+                </video>
+            </galeria_videos>
+        </hito>
+
+        <hito distanciaEntreHitos="2 km">
+            <nombre>Molino del Cura</nombre>
+            <descripcion>Antiguo molino de viento restaurado.</descripcion>
+            <coordenadas>
+                <longitud>-1.1357</longitud>
+                <latitud>37.9803</latitud>
+                <altitud>70</altitud>
+            </coordenadas>
+            <galeria_fotografias>
+                <fotografia>
+                    <enlace>multimedia/fotos/molino_cura_1.jpg</enlace>
+                </fotografia>
+                <fotografia>
+                    <enlace>multimedia/fotos/molino_cura_2.jpg</enlace>
+                </fotografia>
+            </galeria_fotografias>
+            <galeria_videos>
+                <!-- No hay videos disponibles para este hito -->
+            </galeria_videos>
+        </hito>
+    </ruta>
+    <ruta fechaInicio="2024-05-02" horaInicio="2024-05-02T10:00:00">
+        <nombre>Ruta de los Huertos</nombre>
+        <tipoRuta>Paisajística</tipoRuta>
+        <medioTransporte>A pie</medioTransporte>
+        <duracionRuta>4 horas</duracionRuta>
+        <agencia>NaturaTur</agencia>
+        <descripcion>Ruta que atraviesa los huertos tradicionales de la región de Murcia.</descripcion>
+        <personasAdecuadas>Personas en buena forma física</personasAdecuadas>
+        <lugarInicio>Plaza de las Flores</lugarInicio>
+        <direccionInicio>Calle Jardín</direccionInicio>
+        <coordenadasDireccionInicio>
+            <coordenadas>
+                <longitud>-1.1307</longitud>
+                <latitud>37.9878</latitud>
+                <altitud>45</altitud>
+            </coordenadas>
+        </coordenadasDireccionInicio>
+        <referencia>
+            <enlace>https://www.regmurcia.com</enlace>
+        </referencia>
+        <referencia>
+            <enlace>https://www.murciaturistica.es</enlace>
+        </referencia>
+        <referencia>
+            <enlace>https://es.wikipedia.org/wiki/Huertos_tradicionales_de_Murcia</enlace>
+        </referencia>
+        <recomendacion>7</recomendacion>
+        <hito distanciaEntreHitos="2 km">
+            <nombre>Huerto de Limoneros</nombre>
+            <descripcion>Huerto tradicional con limoneros centenarios.</descripcion>
+            <coordenadas>
+                <longitud>-1.1279</longitud>
+                <latitud>37.9897</latitud>
+                <altitud>50</altitud>
+            </coordenadas>
+            <galeria_fotografias>
+                <fotografia>
+                    <enlace>multimedia/fotos/huerto_limoneros_1.jpg</enlace>
+                </fotografia>
+                <fotografia>
+                    <enlace>multimedia/fotos/huerto_limoneros_2.jpg</enlace>
+                </fotografia>
+            </galeria_fotografias>
+            <galeria_videos>
+                <video>
+                    <enlace>multimedia/videos/huerto_limoneros_panorama.mp4</enlace>
+                </video>
+            </galeria_videos>
+        </hito>
+        <hito distanciaEntreHitos="1.5 km">
+            <nombre>Huerto de Naranjos</nombre>
+            <descripcion>Huerto tradicional con naranjos y albercas de riego.</descripcion>
+            <coordenadas>
+                <longitud>-1.1286</longitud>
+                <latitud>37.9913</latitud>
+                <altitud>55</altitud>
+            </coordenadas>
+            <galeria_fotografias>
+                <fotografia>
+                    <enlace>multimedia/fotos/huerto_naranjos_1.jpg</enlace>
+                </fotografia>
+                <fotografia>
+                    <enlace>multimedia/fotos/huerto_naranjos_2.jpg</enlace>
+                </fotografia>
+            </galeria_fotografias>
+            <galeria_videos>
+                <!-- No hay videos disponibles para este hito -->
+            </galeria_videos>
+        </hito>
+        <hito distanciaEntreHitos="1 km">
+            <nombre>Huerto de Palmeras</nombre>
+            <descripcion>Huerto tradicional con palmeras y sistema de regadío por goteo.</descripcion>
+            <coordenadas>
+                <longitud>-1.1303</longitud>
+                <latitud>37.9931</latitud>
+                <altitud>60</altitud>
+            </coordenadas>
+            <galeria_fotografias>
+                <fotografia>
+                    <enlace>multimedia/fotos/huerto_palmeras_1.jpg</enlace>
+                </fotografia>
+                <fotografia>
+                    <enlace>multimedia/fotos/huerto_palmeras_2.jpg</enlace>
+                </fotografia>
+            </galeria_fotografias>
+            <galeria_videos>
+                <video>
+                    <enlace>multimedia/videos/huerto_palmeras_panorama.mp4</enlace>
+                </video>
+            </galeria_videos>
+        </hito>
+    </ruta>
+    <ruta fechaInicio="2024-05-03" horaInicio="2024-05-03T08:30:00">
+        <nombre>Ruta del Segura</nombre>
+        <tipoRuta>Paisajística</tipoRuta>
+        <medioTransporte>Bicicleta</medioTransporte>
+        <duracionRuta>1 día</duracionRuta>
+        <agencia>Sin agencia</agencia>
+        <descripcion>Ruta que sigue el curso del río Segura, pasando por paisajes naturales y pueblos pintorescos.</descripcion>
+        <personasAdecuadas>Personas en buena forma física</personasAdecuadas>
+        <lugarInicio>Parque Fluvial del Segura</lugarInicio>
+        <direccionInicio>Carretera de Alcantarilla, s/n</direccionInicio>
+        <coordenadasDireccionInicio>
+            <coordenadas>
+                <longitud>-1.2378</longitud>
+                <latitud>38.0012</latitud>
+                <altitud>40</altitud>
+            </coordenadas>
+        </coordenadasDireccionInicio>
+        <referencia>
+            <enlace>https://www.regmurcia.com</enlace>
+        </referencia>
+        <referencia>
+            <enlace>https://es.wikipedia.org/wiki/R%C3%ADo_Segura</enlace>
+        </referencia>
+        <referencia>
+            <enlace>https://www.murciaturistica.es</enlace>
+        </referencia>
+        <recomendacion>9</recomendacion>
+        <hito distanciaEntreHitos="5 km">
+            <nombre>Molino de San José</nombre>
+            <descripcion>Antiguo molino restaurado, ahora convertido en museo.</descripcion>
+            <coordenadas>
+                <longitud>-1.2324</longitud>
+                <latitud>38.0096</latitud>
+                <altitud>50</altitud>
+            </coordenadas>
+            <galeria_fotografias>
+                <fotografia>
+                    <enlace>multimedia/fotos/molino_san_jose_1.jpg</enlace>
+                </fotografia>
+                <fotografia>
+                    <enlace>multimedia/fotos/molino_san_jose_2.jpg</enlace>
+                </fotografia>
+            </galeria_fotografias>
+            <galeria_videos>
+                <video>
+                    <enlace>multimedia/videos/molino_san_jose_panorama.mp4</enlace>
+                </video>
+            </galeria_videos>
+        </hito>
+        <hito distanciaEntreHitos="8 km">
+            <nombre>Puente de los Peligros</nombre>
+            <descripcion>Antiguo puente de piedra construido en el siglo XVIII.</descripcion>
+            <coordenadas>
+                <longitud>-1.2305</longitud>
+                <latitud>38.0148</latitud>
+                <altitud>55</altitud>
+            </coordenadas>
+            <galeria_fotografias>
+                <fotografia>
+                    <enlace>multimedia/fotos/puente_peligros_1.jpg</enlace>
+                </fotografia>
+                <fotografia>
+                    <enlace>multimedia/fotos/puente_peligros_2.jpg</enlace>
+                </fotografia>
+            </galeria_fotografias>
+            <galeria_videos>
+                <!-- No hay videos disponibles para este hito -->
+            </galeria_videos>
+        </hito>
+        <hito distanciaEntreHitos="10 km">
+            <nombre>Paraje Natural de la Presa</nombre>
+            <descripcion>Área protegida con una presa que ofrece vistas panorámicas del río Segura.</descripcion>
+            <coordenadas>
+                <longitud>-1.2243</longitud>
+                <latitud>38.0213</latitud>
+                <altitud>60</altitud>
+            </coordenadas>
+            <galeria_fotografias>
+                <fotografia>
+                    <enlace>multimedia/fotos/presa_1.jpg</enlace>
+                </fotografia>
+                <fotografia>
+                    <enlace>multimedia/fotos/presa_2.jpg</enlace>
+                </fotografia>
+            </galeria_fotografias>
+            <galeria_videos>
+                <video>
+                    <enlace>multimedia/videos/presa_panorama.mp4</enlace>
+                </video>
+            </galeria_videos>
+        </hito>
+    </ruta>
+</rutas>

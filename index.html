@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="estilo/estilo.css"/>
     <link rel="stylesheet" type="text/css" href="estilo/layout.css"/>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="js/Carrusel.js" ></script>
 </head>
 
 <body>
@@ -25,7 +26,16 @@
         </nav>
     </header>
     <article>
-        <h2>Carrusel</h2>
+        <h2>Carrusel de Fotos</h2>
+        <button>Anterior</button>
+        <section>
+            <img src="multimedia/imagenes/Catedral.jpeg" alt="Catedral de Murcia" />
+            <img src="multimedia/imagenes/PalacioEpiscopal.jpeg" alt="Palacio Episcopal" />
+            <img src="multimedia/imagenes/PlazaSantoDomingo.jpeg" alt="Plaza de Santo Domingo" />
+            <img src="multimedia/imagenes/JardinFloridablanca.jpeg" alt="Jardin de Floridablanca" />
+            <img src="multimedia/imagenes/MuseoSalzillo.jpeg" alt="Museo Salzillo" />
+        </section>
+        <button>Posterior</button>
     </article>
     <article>
         <h2>Tiempo Hoy</h2>
@@ -40,4 +50,10 @@
         <h2>Última Actualización</h2>
     </article>
 </body>
+<script>
+    const buttonPrev=document.querySelector("article>button:first-of-type");
+    const buttonNext=document.querySelector("article>button:last-of-type");
+    const imageContainer=document.querySelector("article>section");
+    const carrusel = new Carrusel(buttonPrev,buttonNext,imageContainer);
+</script>
 </html>

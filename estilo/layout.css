@@ -25,6 +25,23 @@ table{
 nav>a{
   margin: 0.1em;
 }
+ /**Especificidad: 002*/
+article>section{
+  display:flex;
+}
+ /**Especificidad: 003*/
+article>section>img{
+  width:33%;
+  height: auto;
+  overflow: hidden;
+}
+ /**Especificidad: 011*/
+ article>*:not(:first-child){
+   /**Preguntar como hacer para que los botones entren dentro del flex*/
+   display:flex;
+   justify-content: space-between;
+   align-items: center;
+ }
 @media only screen and (max-width: 465px) {
   /**Especificidad:001*/
   video {

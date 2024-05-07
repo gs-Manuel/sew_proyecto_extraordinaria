@@ -84,6 +84,14 @@ th {
      color: #cdfeaa;
  }
  /**Especificidad: 013*/
+ article>section>img[data-state="inactive"]{
+     opacity: 0.1;
+ }
+ /**Especificidad: 013*/
+ article>section>img[data-state="active"]{
+     opacity: 1;
+ }
+ /**Especificidad: 013*/
  section > ul > li:nth-of-type(3){
      color: #DF265E;
  }

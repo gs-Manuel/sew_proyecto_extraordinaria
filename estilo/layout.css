@@ -37,7 +37,6 @@ article>section>img{
 }
  /**Especificidad: 011*/
  article>*:not(:first-child){
-   /**Preguntar como hacer para que los botones entren dentro del flex*/
    display:flex;
    justify-content: space-between;
    align-items: center;

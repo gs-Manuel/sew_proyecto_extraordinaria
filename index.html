@@ -28,15 +28,15 @@
     </header>
     <article>
         <h2>Carrusel de Fotos</h2>
-        <button>Anterior</button>
         <section>
+            <button>Anterior</button>
             <img src="multimedia/imagenes/Catedral.jpeg" alt="Catedral de Murcia" />
             <img src="multimedia/imagenes/PalacioEpiscopal.jpeg" alt="Palacio Episcopal" />
             <img src="multimedia/imagenes/PlazaSantoDomingo.jpeg" alt="Plaza de Santo Domingo" />
             <img src="multimedia/imagenes/JardinFloridablanca.jpeg" alt="Jardin de Floridablanca" />
             <img src="multimedia/imagenes/MuseoSalzillo.jpeg" alt="Museo Salzillo" />
+            <button>Posterior</button>
         </section>
-        <button>Posterior</button>
     </article>
     <article>
         <h2>Tiempo Hoy</h2>
@@ -52,10 +52,7 @@
     </footer>
 </body>
 <script>
-    const buttonPrev=document.querySelector("article>button:first-of-type");
-    const buttonNext=document.querySelector("article>button:last-of-type");
-    const imageContainer=document.querySelector("article>section");
-    const carrusel = new Carrusel(buttonPrev,buttonNext,imageContainer);
+    const carrusel = new Carrusel();
     const footer = document.querySelector("footer");
     const ultimaModificacion = new UltimaModificacion(footer);
 </script>

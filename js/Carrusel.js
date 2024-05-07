@@ -1,15 +1,15 @@
 "use strict";
 class Carrusel{
-    constructor(buttonPrev,buttonNext,imageContainer) {
-        this.buttonPrev=buttonPrev;
-        this.buttonNext=buttonNext;
-        this.imageContainer=imageContainer;
+    constructor() {
+        this.buttonPrev=document.querySelector("article>section>button:first-of-type");
+        this.buttonNext=document.querySelector("article>section>button:last-of-type");
+        this.imageContainer=document.querySelector("article>section");
         this.currentIndex=0;
         this.addEventListeners(this);
         this.showImage(this);
     }
-    //TODO: Como Hacer el carrusel para que se muevan las imagenes en funcion del boton
      showImage(carrusel) {
+        debugger;
          const images = carrusel.imageContainer.querySelectorAll('img');
          const numImages = images.length;
         for(let i = 0;i<numImages;i++){
@@ -21,12 +21,14 @@ class Carrusel{
         }
     }
      nextImage() {
-        this.currentIndex = (this.currentIndex + 1) % imageContainer.children.length;
+         const images = this.imageContainer.querySelectorAll('img');
+        this.currentIndex = (this.currentIndex + 1) % images.length;
         this.showImage(this);
     }
 
      prevImage() {
-        this.currentIndex = (this.currentIndex - 1 + this.imageContainer.children.length) % this.imageContainer.children.length;
+         const images = this.imageContainer.querySelectorAll('img');
+        this.currentIndex = (this.currentIndex - 1 + images.length) % images.length;
         this.showImage(this);
     }
     addEventListeners(carrusel){

@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="estilo/layout.css"/>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="js/Carrusel.js" ></script>
+    <script src="js/UltimaModificacion.js" ></script>
 </head>
 
 <body>
@@ -46,14 +47,16 @@
     <section>
         <h2>Noticias</h2>
     </section>
-    <article>
-        <h2>Última Actualización</h2>
-    </article>
+    <footer>
+        <h3>Última modificación: </h3>
+    </footer>
 </body>
 <script>
     const buttonPrev=document.querySelector("article>button:first-of-type");
     const buttonNext=document.querySelector("article>button:last-of-type");
     const imageContainer=document.querySelector("article>section");
     const carrusel = new Carrusel(buttonPrev,buttonNext,imageContainer);
+    const footer = document.querySelector("footer");
+    const ultimaModificacion = new UltimaModificacion(footer);
 </script>
 </html>

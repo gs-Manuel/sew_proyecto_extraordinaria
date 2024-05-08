@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="estilo/estilo.css"/>
     <link rel="stylesheet" type="text/css" href="estilo/layout.css"/>
+    <script src="js/Juego.js" ></script>
 </head>
 <body>
     <header>
@@ -26,14 +27,28 @@
         <form>
             <section>
                 <h2>Pregunta 1: ¿Sobre qué ciudad es el proyecto?</h2>
-                <input type="radio" name="p1" value="1" /><label for="p1r1">Murcia</label>
-                <input type="radio" name="p1" value="2" /><label for="p1r2">Oviedo</label>
-                <input type="radio" name="p1" value="3" /><label for="p1r3">Salamanca</label>
-                <input type="radio" name="p1" value="4" /><label for="p1r4">Gijón</label>
-                <input type="radio" name="p1" value="5" /><label for="p1r5">Madrid</label>
+                <label> Murcia
+                    <input type="radio" name="p1" value="Murcia" />
+                </label>
+                <label>Oviedo
+                    <input type="radio" name="p1" value="Oviedo" />
+                </label>
+                <label>Salamanca
+                    <input type="radio" name="p1" value="Salamanca" />
+                </label>
+                <label>Gijón
+                    <input type="radio" name="p1" value="Gijón" />
+                </label>
+                <label>Madrid
+                    <input type="radio" name="p1" value="Madrid" />
+                </label>
             </section>
             <button>Submit</button>
         </form>
+
     </main>
 </body>
+<script>
+    const juego = new Juego();
+</script>
 </html>

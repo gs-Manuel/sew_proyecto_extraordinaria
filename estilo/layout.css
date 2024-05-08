@@ -31,6 +31,11 @@ article>section{
   justify-content: space-between;
   align-items: center;
 }
+ /*Especificidad: 002*/
+ fieldset>section{
+   display:flex;
+   flex-direction: column;
+ }
  /**Especificidad: 003*/
 article>section>img{
   width:33%;

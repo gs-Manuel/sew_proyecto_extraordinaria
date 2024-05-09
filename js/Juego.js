@@ -1,6 +1,5 @@
 "use-strict"
-
-class Juego {
+class Juego{
     constructor() {
         this.form = document.querySelector("form");
         this.puntuacion = 0;
@@ -76,7 +75,6 @@ class Juego {
         button.textContent="Submit";
         this.form.appendChild(button);
     }
-
     addEventListener() {
         this.form.addEventListener('submit', this.onSubmit.bind(this));
     }
@@ -91,7 +89,6 @@ class Juego {
         alert(`Su puntuación ha sido de: ${this.puntuacion}`)
         this.reset();
     }
-
     obtenerRespuestas() {
         const inputs = [];
         for (let i = 1; i <= this.numeroPreguntas; i++) {
@@ -99,7 +96,6 @@ class Juego {
         }
         return inputs;
     }
-
     comprobarRespuestas(inputs){
         for(let i =0;i<this.numeroPreguntas;i++){
             if(inputs[i].value===this.respuestasCorrectas[i]){

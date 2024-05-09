@@ -12,7 +12,7 @@
   color:#003060;
  }
  /**Especificidad: 001*/
- h1,h2,h3,caption{
+ h1,h2,h3,caption,legend{
     color:#003060;
  }
   /**Especificidad: 001*/
@@ -26,7 +26,7 @@
     font-size:3em;
  }
  /**Especificidad:001*/
- h3,caption{
+ h3,caption,legend{
     font-size:1.5em;
  }
 /**Especificidad: 001*/
@@ -50,6 +50,7 @@ th {
     border: 0.1em solid rgb(80, 143, 12);
     letter-spacing: 0.1em;
 }
+
  /**Especificidad: 002*/
  main>section{
   border: 0.1em solid rgb(80, 143, 12);

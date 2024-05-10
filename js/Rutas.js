@@ -1,7 +1,7 @@
 "use-strict"
 class Rutas{
     constructor(rutasData) {
-        this.rutasXML =$.parseXML(rutasData);
+        this.rutasXML = rutasData;
     }
     traducirHTML() {
         const rutas = $(this.rutasXML).find("ruta");

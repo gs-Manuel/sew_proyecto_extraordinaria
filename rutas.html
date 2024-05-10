@@ -26,36 +26,38 @@
     </header>
     <main>
         <h2>Rutas</h2>
+        <!--
+                <div id="map" style="width: 500px; height: 500px"></div>
 
-        <div id="map" style="width: 500px; height: 500px"></div>
+                <script>
 
-        <script>
-            var map;
-            var src = 'https://developers.google.com/maps/documentation/javascript/examples/kml/westcampus.kml';
+                         var map;
+                         var src = 'https://developers.google.com/maps/documentation/javascript/examples/kml/westcampus.kml';
 
-            function initMap() {
-                map = new google.maps.Map(document.getElementById('map'), {
-                    center: new google.maps.LatLng(-19.257753, 146.823688),
-                    zoom: 2,
-                    mapTypeId: 'terrain'
-                });
-/* Pasaar dataUrl en src por que igual funciona
-                var kmlLayer = new google.maps.KmlLayer(src, {
-                    suppressInfoWindows: true,
-                    preserveViewport: false,
-                    map: map
-                });
-                kmlLayer.addListener('click', function(event) {
-                    var content = event.featureData.infoWindowHtml;
-                    var testimonial = document.getElementById('capture');
-                    testimonial.innerHTML = content;
-                });
-*/            }
-        </script>
-        <script async
-                src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
-        </script>
+                         function initMap() {
+                             map = new google.maps.Map(document.getElementById('map'), {
+                                 center: new google.maps.LatLng(-19.257753, 146.823688),
+                                 zoom: 2,
+                                 mapTypeId: 'terrain'
+                             });
+             // Pasaar dataUrl en src por que igual funciona
+                             var kmlLayer = new google.maps.KmlLayer(src, {
+                                 suppressInfoWindows: true,
+                                 preserveViewport: false,
+                                 map: map
+                             });
+                             kmlLayer.addListener('click', function(event) {
+                                 var content = event.featureData.infoWindowHtml;
+                                 var testimonial = document.getElementById('capture');
+                                 testimonial.innerHTML = content;
+                             });
+                         }
+            </script>
 
+                <script async
+                        src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+                </script>
+        -->
     </main>
 </body>
 <script>
@@ -65,7 +67,7 @@
             dataType: "xml",
             success: function(rutasData) {
                 const rutas = new Rutas(rutasData);
-                //rutas.traducirHTML();
+                rutas.traducirHTML();
             },
             error: function(error) {
                 console.error("Error al cargar el XML:", error);

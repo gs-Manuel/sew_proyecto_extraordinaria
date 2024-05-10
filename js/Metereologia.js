@@ -25,7 +25,6 @@ class Metereologia{
         }
     }
     imprimirTiempoActual(data){
-        console.log(data)
         const section = document.createElement("section")
         const title = document.createElement("h4")
         const p1 =document.createElement("p");
@@ -54,8 +53,9 @@ class Metereologia{
             this.last_api_call = Date.now();
             const apiKey = "af570203c4f84141406f2b72dc283547";
             const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${37.986111}&lon=${-1.130278}&appid=${apiKey}&units=metric&lang=es`;
+            const apiUrl3 = `https://api.openweathermap.org/data/3.0/onecall?lat=${37.986111}&lon=${-1.130278}&exclude=current,minutely,hourly&appid=${apiKey}&units=metric&lang=es`;
             $.getJSON({
-                url: apiUrl,
+                url: apiUrl3,
                 method: 'GET',
                 success: data => {
                     this.last_api_result = data;

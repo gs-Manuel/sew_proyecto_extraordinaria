@@ -1,7 +1,6 @@
 /* Manuel González Santos  -   UO279387*/
+/*Especificidad: 002*/
 article>section{
-    display:grid;
-    grid-template-columns: repeat(7,auto);
-    gap: 1em;
-    text-align: center;
+    display:flex;
+    border-bottom: 0.1em solid #003060;
 }

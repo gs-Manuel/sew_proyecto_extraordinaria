@@ -50,7 +50,6 @@ th {
     border: 0.1em solid rgb(80, 143, 12);
     letter-spacing: 0.1em;
 }
-
  /**Especificidad: 002*/
  main>section{
   border: 0.1em solid rgb(80, 143, 12);

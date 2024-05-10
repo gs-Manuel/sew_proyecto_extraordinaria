@@ -1,16 +1,59 @@
 "use-strict"
 class Metereologia{
     constructor() {
-        this.contenedor=document.querySelector("article");
         this.last_api_call  = null;
         this.last_api_result = null;
-        this.obtenerPrevisionTiempo();
     }
-    obtenerPrevisionTiempo() {
-        if (this.last_api_call === null || this.last_api_call + (2 * 60 * 60 * 1000) < Date.now()) {//una llamada cada 2 horas
+    obtenerTiempoActual(){
+        if (this.last_api_call === null || this.last_api_call + (14 * 60 * 1000) < Date.now()) {//una llamada cada 14 minutos
             this.last_api_call = Date.now();
             const apiKey = "af570203c4f84141406f2b72dc283547";
-            const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${37.986111}&lon=${-1.130278}&units=metric&appid=${apiKey}`;
+            const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${37.986111}&lon=${-1.130278}&appid=${apiKey}&units=metric&lang=es`;
+            $.getJSON({
+                url: apiUrl,
+                method: 'GET',
+                success: data => {
+                    this.last_api_result = data;
+                    this.imprimirTiempoActual(data);
+                },
+                error: error => {
+                    console.error(error);
+                }
+            });
+        }else {
+            this.imprimirTiempoActual(this.last_api_result);
+        }
+    }
+    imprimirTiempoActual(data){
+        console.log(data)
+        const section = document.createElement("section")
+        const title = document.createElement("h4")
+        const p1 =document.createElement("p");
+        const p2 =document.createElement("p");
+        const p3 =document.createElement("p");
+        const iconUrl = document.createElement("img");
+
+        const element = data.list[0];
+        const time = new Date(element.dt*1000);
+
+        title.textContent=time.toLocaleTimeString('es');
+        p1.textContent="Temperatura: "+ element.main.temp+" °C";
+        p2.textContent="Presión: "+element.main.pressure+" hPa";
+        p3.textContent="Humedad: "+element.main.humidity+" %";
+        iconUrl.src=`https://openweathermap.org/img/w/${element.weather[0].icon}.png`;
+        iconUrl.alt="Icono del tiempo";
+        section.append(title)
+        section.append(p1)
+        section.append(p2)
+        section.append(p3)
+        section.append(iconUrl);
+        $("article:nth-of-type(2)").append(section);
+    }
+    obtenerPrevisionTiempo() {
+        if (this.last_api_call === null || this.last_api_call + (14 * 60 * 1000) < Date.now()) {//una llamada cada 14 minutos
+            this.last_api_call = Date.now();
+            const apiKey = "af570203c4f84141406f2b72dc283547";
+            const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${37.986111}&lon=${-1.130278}&appid=${apiKey}&units=metric&lang=es`;
             $.getJSON({
                 url: apiUrl,
                 method: 'GET',
@@ -32,18 +75,21 @@ class Metereologia{
         data.list.forEach(element => {
             minTempDay = element.main.temp_min < minTempDay ? element.main.temp_min : minTempDay;
             maxTempDay = element.main.temp_max > maxTempDay ? element.main.temp_max : maxTempDay;
-            if(element.dt_txt.includes("18:00:00")){ //Si es la hora de las 15:00
+            if(element.dt_txt.includes("18:00:00")){
                 const section = document.createElement("section")
                 const title = document.createElement("h4")
-                title.textContent=element.main.temp+" °C";
+                const time = new Date(element.dt*1000);
+                title.textContent=time.toLocaleDateString('es');
                 const p1 =document.createElement("p");
-                p1.textContent="Temperatura mínima: "+minTempDay+" °C";
+                p1.textContent="Temperatura promedio: "+element.main.temp+" °C";
                 const p2 =document.createElement("p");
-                p2.textContent="Temperatura máxima: "+maxTempDay+" °C";
+                p2.textContent="Temperatura mínima: "+minTempDay+" °C";
                 const p3 =document.createElement("p");
-                p3.textContent="Presión: "+element.main.pressure+" °C";
+                p3.textContent="Temperatura máxima: "+maxTempDay+" °C";
                 const p4 =document.createElement("p");
-                p4.textContent="Humedad: "+element.main.humidity+" %";
+                p4.textContent="Presión: "+element.main.pressure+" hPa";
+                const p5 =document.createElement("p");
+                p5.textContent="Humedad: "+element.main.humidity+" %";
                 const iconUrl = document.createElement("img");
                 iconUrl.src=`https://openweathermap.org/img/w/${element.weather[0].icon}.png`;
                 iconUrl.alt="Icono del tiempo";
@@ -52,6 +98,7 @@ class Metereologia{
                 section.append(p2)
                 section.append(p3)
                 section.append(p4)
+                section.append(p5)
                 section.append(iconUrl);
                 $("article").append(section);
                 minTempDay = Number.POSITIVE_INFINITY;

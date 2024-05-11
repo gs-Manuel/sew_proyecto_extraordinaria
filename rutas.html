@@ -67,7 +67,6 @@
             dataType: "xml",
             success: function(rutasData) {
                 const rutas = new Rutas(rutasData);
-                rutas.traducirHTML();
             },
             error: function(error) {
                 console.error("Error al cargar el XML:", error);

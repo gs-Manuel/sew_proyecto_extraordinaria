@@ -50,7 +50,8 @@ class Mapa{
     getMapaEstaticoGoogle(dondeVerlo){
         var ubicacion=document.getElementById(dondeVerlo);
 
-        var apiKey = "&key=AIzaSyC6j4mF6blrc4kZ54S6vYZ2_FpMY9VzyRU";
+        const apiKeyGoogleMaps = "AIzaSyDNPnDPlm8m8ot24z5jQ0gWSKYoqCb1ego";
+
         //URL: obligatoriamente https
         var url = "https://maps.googleapis.com/maps/api/staticmap?";
         //Parámetros
@@ -73,7 +74,7 @@ class Mapa{
         //style (opcional)
         var sensor = "&sensor=false";
 
-        this.imagenMapa = url + centro + zoom + tamaño + marcador + sensor + apiKey;
+        this.imagenMapa = url + centro + zoom + tamaño + marcador + sensor + apiKeyGoogleMaps;
         ubicacion.innerHTML = "<img src='"+this.imagenMapa+"' alt='mapa estático google' />";
     }
 }

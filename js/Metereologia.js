@@ -52,7 +52,6 @@ class Metereologia{
         if (this.last_api_call === null || this.last_api_call + (14 * 60 * 1000) < Date.now()) {//una llamada cada 14 minutos
             this.last_api_call = Date.now();
             const apiKey = "af570203c4f84141406f2b72dc283547";
-            const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${37.986111}&lon=${-1.130278}&appid=${apiKey}&units=metric&lang=es`;
             const apiUrl3 = `https://api.openweathermap.org/data/3.0/onecall?lat=${37.986111}&lon=${-1.130278}&exclude=current,minutely,hourly&appid=${apiKey}&units=metric&lang=es`;
             $.getJSON({
                 url: apiUrl3,
@@ -70,40 +69,33 @@ class Metereologia{
             }
     }
     imprimirPrevisionTiempo(data){
-        let minTempDay = Number.POSITIVE_INFINITY;
-        let maxTempDay = -100000;
-        data.list.forEach(element => {
-            minTempDay = element.main.temp_min < minTempDay ? element.main.temp_min : minTempDay;
-            maxTempDay = element.main.temp_max > maxTempDay ? element.main.temp_max : maxTempDay;
-            if(element.dt_txt.includes("18:00:00")){
-                const section = document.createElement("section")
-                const title = document.createElement("h4")
-                const time = new Date(element.dt*1000);
-                title.textContent=time.toLocaleDateString('es');
-                const p1 =document.createElement("p");
-                p1.textContent="Temperatura promedio: "+element.main.temp+" °C";
-                const p2 =document.createElement("p");
-                p2.textContent="Temperatura mínima: "+minTempDay+" °C";
-                const p3 =document.createElement("p");
-                p3.textContent="Temperatura máxima: "+maxTempDay+" °C";
-                const p4 =document.createElement("p");
-                p4.textContent="Presión: "+element.main.pressure+" hPa";
-                const p5 =document.createElement("p");
-                p5.textContent="Humedad: "+element.main.humidity+" %";
-                const iconUrl = document.createElement("img");
-                iconUrl.src=`https://openweathermap.org/img/w/${element.weather[0].icon}.png`;
-                iconUrl.alt="Icono del tiempo";
-                section.append(title)
-                section.append(p1)
-                section.append(p2)
-                section.append(p3)
-                section.append(p4)
-                section.append(p5)
-                section.append(iconUrl);
-                $("article").append(section);
-                minTempDay = Number.POSITIVE_INFINITY;
-                maxTempDay = -100000;
-            }
-        });
+        for(let i = 0;i<7;i++){
+            const element = data.daily[i];
+            const section = document.createElement("section")
+            const title = document.createElement("h4")
+            const time = new Date(element.dt*1000);
+            title.textContent=time.toLocaleDateString('es');
+            const p1 =document.createElement("p");
+            p1.textContent="Temperatura promedio: "+element.temp.day+" °C";
+            const p2 =document.createElement("p");
+            p2.textContent="Temperatura mínima: "+element.temp.min+" °C";
+            const p3 =document.createElement("p");
+            p3.textContent="Temperatura máxima: "+element.temp.max+" °C";
+            const p4 =document.createElement("p");
+            p4.textContent="Tiempo: "+element.weather[0].description;
+            const p5 =document.createElement("p");
+            p5.textContent="Humedad: "+element.humidity+" %";
+            const iconUrl = document.createElement("img");
+            iconUrl.src=`https://openweathermap.org/img/w/${element.weather[0].icon}.png`;
+            iconUrl.alt="Icono del tiempo";
+            section.append(title)
+            section.append(p1)
+            section.append(p2)
+            section.append(p3)
+            section.append(p4)
+            section.append(p5)
+            section.append(iconUrl);
+            $("article").append(section);
+        }
     }
 }

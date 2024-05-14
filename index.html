@@ -12,6 +12,8 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="js/Carrusel.js" ></script>
     <script src="js/Metereologia.js" ></script>
+    <script src="js/Noticias.js" ></script>
+    <script src="js/Mapa.js" ></script>
     <script src="js/UltimaModificacion.js" ></script>
 </head>
 
@@ -45,11 +47,11 @@
     <article>
         <h2>Mapa</h2>
     </article>
-    <section>
+    <article>
         <h2>Noticias</h2>
-    </section>
+    </article>
     <footer>
-        <p>Última modificación: </p>
+        <p>Última modificación de la página principal: </p>
 
     </footer>
 </body>
@@ -57,6 +59,8 @@
     const carrusel = new Carrusel();
     const metereologia = new Metereologia();
     metereologia.obtenerTiempoActual();
+    const noticias = new Noticias();
+    const mapa = new Mapa();
     const ultimaModificacion = new UltimaModificacion();
 </script>
 </html>

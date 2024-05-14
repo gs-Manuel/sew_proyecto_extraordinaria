@@ -50,6 +50,17 @@ th {
     border: 0.1em solid rgb(80, 143, 12);
     letter-spacing: 0.1em;
 }
+/*Especificidad: 001*/
+button {
+ padding: 0.8em 1.5em;
+ font-size: 0.8em;
+ border: none;
+ border-radius: 0.3em;
+ cursor: pointer;
+ background-color: #4CAF50;
+ color: white;
+ transition: background-color 0.3s;
+}
  /**Especificidad: 002*/
  main>section{
   border: 0.1em solid rgb(80, 143, 12);
@@ -59,6 +70,20 @@ th {
  nav>a{
      border-color: #003060;
      background-color:#93bbc8;
+ }
+ /*Especificidad: 011*/
+ button:hover {
+     background-color: #45a049;
+ }
+ /*Especificidad: 011*/
+ button:active {
+     background-color: #3e8e41;
+ }
+ /*Especificidad: 011*/
+ button:disabled {
+     background-color: #cccccc;
+     color: #666666;
+     cursor: not-allowed;
  }
  /**Especcificidad: 011*/
  a:link {

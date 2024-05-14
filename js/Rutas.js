@@ -7,15 +7,15 @@ class Rutas{
     mostrarTodo(){
         const rutas = $(this.rutasXML).find("ruta");
         const main = $("main");
-        $.each(rutas, function (ruta,contenedor) {
-            contenedor.append(this.traducirHTML(ruta));
-            contenedor.append(this.traducirKML(ruta));
-            contenedor.append(this.traducirSVG(ruta));
-        },main)
+        $.each(rutas, (i, ruta) => {
+            main.append(this.traducirHTML(ruta));
+            main.append(this.traducirKML(ruta));
+            main.append(this.traducirSVG(ruta));
+        })
     }
      traducirHTML(ruta) {
-            let fechaInicio = new Date($(ruta).find("fechaInicio"));
-            let horaInicio= new Date($(ruta).find("horaInicio"));
+            let fechaInicio = new Date($(ruta).find("fechaInicio").text());
+            let horaInicio= new Date($(ruta).find("horaInicio").text());
             var nombreRuta = $(ruta).find("nombre").first().text();
             var tipoRuta = $(ruta).find("tipoRuta").text();
             var medioTransporte = $(ruta).find("medioTransporte").text();
@@ -47,9 +47,8 @@ class Rutas{
             rutaHTML += "<li>Coordenadas: Latitud: " + coordenadasInicio.latitud + ", Longitud: " + coordenadasInicio.longitud + "</li>";
             rutaHTML += "<li>Recomendación: " + recomendacion + " (1-10)</li>";
             rutaHTML += "</ul>";
-            // Procesar hitos (si existen)
             var hitos = $(ruta).find("hito");
-            hitos.forEach(hito=>{
+            hitos.each((i,hito)=>{
                 let distanciaEntreHitos=$(hito).find("distanciaEntreHitos").text();
                 let nombreHito = $(hito).find("nombre").text();
                 let descripcionHito = $(hito).find("descripcion").text();
@@ -59,70 +58,102 @@ class Rutas{
                 };
                 let galeriaFotografias=$(hito).find("galeria_fotografias");
                 let sectionFotos =document.createElement("section");
-                galeriaFotografias.forEach((fotografia, section)=>{
+                galeriaFotografias.each((i,fotografia)=>{
                     let img = document.createElement("img");
                     img.src=$(fotografia).find("enlace").text();
-                    $(section).append(img)
-                },sectionFotos)
+                    $(sectionFotos).append(img)
+                })
                 let sectionVideos =document.createElement("section");
                 let galeriaVideos=$(hito).find("galeria_videos");
-                galeriaVideos.forEach((v, section)=>{
+                galeriaVideos.each((i,v)=>{
                     let video = document.createElement("video");
                     video.src=$(v).find("enlace").text();
-                    $(section).append(video)
-                },sectionVideos)
+                    $(sectionVideos).append(video)
+                })
                 rutaHTML += "<h3>Hitos</h3>";
                 rutaHTML += "<ul>";
                 rutaHTML += "<li>Distancia entre hitos: " + distanciaEntreHitos + "</li>";
                 rutaHTML += "<li>Nombre del hito: " + nombreHito + "</li>";
                 rutaHTML += "<li>Descripción: " + descripcionHito + "</li>";
                 rutaHTML += "<li>Coordenadas: Latitud: " + coordenadasHito.latitud + ", Longitud: " + coordenadasHito.longitud + "</li>";
-                rutaHTML += "<li>Galería de fotografías" +
-                    <ul>
-                        <li>sectionFotos</li>
-                    </ul>
-                    +
-                    "</li>"
-                rutaHTML += "<li>Galería de Videos" +
-                    <ul>
-                        <li>sectionVideos</li>
-                    </ul>
-                    +
-                    "</li>"
+                rutaHTML += "<li>Galería de fotografías" +"<ul>" +"<li>sectionFotos</li>"+"</ul>"+"</li>";
+                rutaHTML += "<li>Galería de Videos" +"<ul><li>sectionVideos</li></ul>"+"</li>"
                 rutaHTML += "</ul>";
             })
          rutaHTML += "</section>"
         return rutaHTML;
     }
-    traducirKML(){
+    traducirKML(ruta){
+        let coordenadasLatitud =[];
+        let coordenadasLongitud=[];
+        const apiKeyGoogleMaps = "&key=AIzaSyDNPnDPlm8m8ot24z5jQ0gWSKYoqCb1ego";
+        coordenadasLatitud.push($(ruta).find("coordenadasDireccionInicio coordenadas latitud").text());
+        coordenadasLongitud.push($(ruta).find("coordenadasDireccionInicio coordenadas longitud").text());
+        let hitos = $(ruta).find("hito");
+        hitos.each((i,hito)=>{
+            coordenadasLatitud.push($(hito).find("coordenadas latitud").text())
+            coordenadasLongitud.push($(hito).find("coordenadas longitud").text())
+        })
+        let strMarker = "";
+        let strPath = "";
+        for(let i = 0;i<coordenadasLongitud.length;i++){
+            if(i===coordenadasLongitud.length-1){
+                strMarker+=coordenadasLatitud[i]+","+coordenadasLongitud[i];
+                strPath+=coordenadasLatitud[i]+","+coordenadasLongitud[i];
+                break;
+            }
+            strMarker+=coordenadasLatitud[i]+","+coordenadasLongitud[i]+"%7C";
+            strPath+=coordenadasLatitud[i]+","+coordenadasLongitud[i]+"|";
+        }
 
+        let section = document.createElement("section");
+        let title=document.createElement("h3");
+        title.textContent="Mapa de la ruta";
+
+        var url = "https://maps.googleapis.com/maps/api/staticmap?";
+        var tamaño= "&size=500x300";
+        let idioma="&language=es"
+        var marcadores = "&markers=color:red%7Clabel:S%7C" + strMarker;
+        var sensor = "&sensor=false";
+        let path="color:0x0000ff|weight:5|"+strPath;
+        let imagenMapa = url + tamaño +idioma+ marcadores + path+sensor + apiKeyGoogleMaps;
+        let imagen = document.createElement("img");
+        imagen.src=imagenMapa;
+        imagen.alt='Mapa estático google';
+        section.appendChild(title);
+        section.appendChild(imagen);
+
+        return section;
     }
     traducirSVG(ruta){
-        let coordenadasAltura =["0"];
+        const maximoX = 360;
+        const maximoY = 180;
+        let coordenadasAltura =[`${maximoY}`];
         coordenadasAltura.push($(ruta).find("coordenadasDireccionInicio coordenadas altitud").text());
         let hitos = $(ruta).find("hito");
-        hitos.forEach((hito,coordenadasAltura)=>{
+        hitos.each((i,hito)=>{
             coordenadasAltura.push($(hito).find("coordenadas altitud").text())
-        },coordenadasAltura)
-        coordenadasAltura.push("0");
-        const maximoX = 360;
-        const maximoY = 280;
+        })
+        coordenadasAltura.push(`${maximoY}`);
         const partitionX = maximoX/coordenadasAltura.length;
         const points = [];
+        let offset = 0;
         for(let i = 0;i<coordenadasAltura.length;i++){
-            let offset = 0;
-            points.push(`${coordenadasAltura[i]},${offset}`)
+            points.push(`${offset},${coordenadasAltura[i]}`)
             offset+=partitionX;
         }
         let str="";
         for(let i =0;i<points.length;i++){
-            str+=points[i];
+            str+=points[i]+" ";
         }
+        let containerSVG ="<section>"
+        containerSVG+="<h3>Altimetría de la ruta</h3>"
         let svg=`<svg height="${maximoY}" width="${maximoX}" xmlns=\"http://www.w3.org/2000/svg\">`;
-        svg+= `<polygon points="${str}" style="fill:lime;stroke:purple;stroke-width:3>`
-        svg+="</polygon>"
+        svg+= `<polygon points="${str}" style="fill:lime;stroke:purple;stroke-width:3"/>`
         svg+="Sorry, your browser does not support inline SVG."
         svg+="</svg>";
-        return svg;
+        containerSVG+=svg;
+        containerSVG+="</section"
+        return containerSVG;
     }
 }

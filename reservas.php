@@ -23,6 +23,9 @@
         </nav>
     </header>
     <article>
+        <?php
+         if (isset($a)) {
+        ?>
         <form>
             <fieldset>
                 <legend>Registro</legend>
@@ -40,6 +43,9 @@
             </fieldset>
             <button>Registrarse</button>
         </form>
+        <?php
+         }
+        ?>
         <form>
             <fieldset>
                 <legend>Identificación</legend>

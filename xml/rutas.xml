@@ -39,16 +39,10 @@
             </coordenadas>
             <galeria_fotografias>
                 <fotografia>
-                    <enlace>multimedia/fotos/molino_1.jpg</enlace>
-                </fotografia>
-                <fotografia>
-                    <enlace>multimedia/fotos/molino_2.jpg</enlace>
+                    <enlace>multimedia/imagenes/molino_1.jpg</enlace>
                 </fotografia>
             </galeria_fotografias>
             <galeria_videos>
-                <video>
-                    <enlace>multimedia/videos/molino_360.mp4</enlace>
-                </video>
             </galeria_videos>
         </hito>
         <hito distanciaEntreHitos="1.5 km">
@@ -61,16 +55,10 @@
             </coordenadas>
             <galeria_fotografias>
                 <fotografia>
-                    <enlace>multimedia/fotos/molino_luz_1.jpg</enlace>
-                </fotografia>
-                <fotografia>
-                    <enlace>multimedia/fotos/molino_luz_2.jpg</enlace>
+                    <enlace>multimedia/imagenes/molino_luz_1.jpg</enlace>
                 </fotografia>
             </galeria_fotografias>
             <galeria_videos>
-                <video>
-                    <enlace>multimedia/videos/molino_luz_panorama.mp4</enlace>
-                </video>
             </galeria_videos>
         </hito>
         <hito distanciaEntreHitos="2 km">
@@ -83,14 +71,10 @@
             </coordenadas>
             <galeria_fotografias>
                 <fotografia>
-                    <enlace>multimedia/fotos/molino_cura_1.jpg</enlace>
-                </fotografia>
-                <fotografia>
-                    <enlace>multimedia/fotos/molino_cura_2.jpg</enlace>
+                    <enlace>multimedia/imagenes/molino_cura_1.jpg</enlace>
                 </fotografia>
             </galeria_fotografias>
             <galeria_videos>
-                <!-- No hay videos disponibles para este hito -->
             </galeria_videos>
         </hito>
     </ruta>
@@ -131,16 +115,10 @@
             </coordenadas>
             <galeria_fotografias>
                 <fotografia>
-                    <enlace>multimedia/fotos/huerto_limoneros_1.jpg</enlace>
-                </fotografia>
-                <fotografia>
-                    <enlace>multimedia/fotos/huerto_limoneros_2.jpg</enlace>
+                    <enlace>multimedia/imagenes/huerto_limoneros_1.jpg</enlace>
                 </fotografia>
             </galeria_fotografias>
             <galeria_videos>
-                <video>
-                    <enlace>multimedia/videos/huerto_limoneros_panorama.mp4</enlace>
-                </video>
             </galeria_videos>
         </hito>
         <hito distanciaEntreHitos="1.5 km">
@@ -153,14 +131,10 @@
             </coordenadas>
             <galeria_fotografias>
                 <fotografia>
-                    <enlace>multimedia/fotos/huerto_naranjos_1.jpg</enlace>
-                </fotografia>
-                <fotografia>
-                    <enlace>multimedia/fotos/huerto_naranjos_2.jpg</enlace>
+                    <enlace>multimedia/imagenes/huerto_naranjos_1.jpg</enlace>
                 </fotografia>
             </galeria_fotografias>
             <galeria_videos>
-                <!-- No hay videos disponibles para este hito -->
             </galeria_videos>
         </hito>
         <hito distanciaEntreHitos="1 km">
@@ -173,16 +147,10 @@
             </coordenadas>
             <galeria_fotografias>
                 <fotografia>
-                    <enlace>multimedia/fotos/huerto_palmeras_1.jpg</enlace>
-                </fotografia>
-                <fotografia>
-                    <enlace>multimedia/fotos/huerto_palmeras_2.jpg</enlace>
+                    <enlace>multimedia/imagenes/huerto_palmeras_1.jpg</enlace>
                 </fotografia>
             </galeria_fotografias>
             <galeria_videos>
-                <video>
-                    <enlace>multimedia/videos/huerto_palmeras_panorama.mp4</enlace>
-                </video>
             </galeria_videos>
         </hito>
     </ruta>
@@ -223,16 +191,10 @@
             </coordenadas>
             <galeria_fotografias>
                 <fotografia>
-                    <enlace>multimedia/fotos/molino_san_jose_1.jpg</enlace>
-                </fotografia>
-                <fotografia>
-                    <enlace>multimedia/fotos/molino_san_jose_2.jpg</enlace>
+                    <enlace>multimedia/imagenes/molino_san_jose_1.jpg</enlace>
                 </fotografia>
             </galeria_fotografias>
             <galeria_videos>
-                <video>
-                    <enlace>multimedia/videos/molino_san_jose_panorama.mp4</enlace>
-                </video>
             </galeria_videos>
         </hito>
         <hito distanciaEntreHitos="8 km">
@@ -245,14 +207,10 @@
             </coordenadas>
             <galeria_fotografias>
                 <fotografia>
-                    <enlace>multimedia/fotos/puente_peligros_1.jpg</enlace>
-                </fotografia>
-                <fotografia>
-                    <enlace>multimedia/fotos/puente_peligros_2.jpg</enlace>
+                    <enlace>multimedia/imagenes/puente_peligros_1.jpg</enlace>
                 </fotografia>
             </galeria_fotografias>
             <galeria_videos>
-                <!-- No hay videos disponibles para este hito -->
             </galeria_videos>
         </hito>
         <hito distanciaEntreHitos="10 km">
@@ -265,16 +223,10 @@
             </coordenadas>
             <galeria_fotografias>
                 <fotografia>
-                    <enlace>multimedia/fotos/presa_1.jpg</enlace>
-                </fotografia>
-                <fotografia>
-                    <enlace>multimedia/fotos/presa_2.jpg</enlace>
+                    <enlace>multimedia/imagenes/presa_1.jpg</enlace>
                 </fotografia>
             </galeria_fotografias>
             <galeria_videos>
-                <video>
-                    <enlace>multimedia/videos/presa_panorama.mp4</enlace>
-                </video>
             </galeria_videos>
         </hito>
     </ruta>

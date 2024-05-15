@@ -61,6 +61,12 @@ button {
  color: white;
  transition: background-color 0.3s;
 }
+ /*Especificidad: 001*/
+polygon{
+    fill:lime;
+    stroke:purple;
+    stroke-width:3;
+}
  /**Especificidad: 002*/
  main>section{
   border: 0.1em solid rgb(80, 143, 12);

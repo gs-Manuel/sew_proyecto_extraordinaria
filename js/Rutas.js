@@ -14,8 +14,8 @@ class Rutas{
         })
     }
      traducirHTML(ruta) {
-            let fechaInicio = new Date($(ruta).find("fechaInicio").text());
-            let horaInicio= new Date($(ruta).find("horaInicio").text());
+            let fechaInicio = new Date($(ruta).attr("fechaInicio"));
+            let horaInicio= new Date($(ruta).attr("horaInicio"));
             var nombreRuta = $(ruta).find("nombre").first().text();
             var tipoRuta = $(ruta).find("tipoRuta").text();
             var medioTransporte = $(ruta).find("medioTransporte").text();
@@ -57,27 +57,39 @@ class Rutas{
                     longitud: $(hito).find("coordenadas longitud").text()
                 };
                 let galeriaFotografias=$(hito).find("galeria_fotografias");
-                let sectionFotos =document.createElement("section");
+                let sectionFotos ="<section>";
                 galeriaFotografias.each((i,fotografia)=>{
-                    let img = document.createElement("img");
-                    img.src=$(fotografia).find("enlace").text();
-                    $(sectionFotos).append(img)
+                    if(galeriaFotografias.children().length===0)
+                        return;
+                    sectionFotos+="<li>";
+                    let src=$(fotografia).find("enlace").text();
+                    let alt="Fotografía de: "+nombreHito;
+                    let img =`<img src="${src}" alt="${alt}"></img>`;
+                    sectionFotos+=img;
+                    sectionFotos+="</li>";
                 })
-                let sectionVideos =document.createElement("section");
+                sectionFotos+="</section>";
+                let sectionVideos ="<section>";
                 let galeriaVideos=$(hito).find("galeria_videos");
                 galeriaVideos.each((i,v)=>{
-                    let video = document.createElement("video");
-                    video.src=$(v).find("enlace").text();
-                    $(sectionVideos).append(video)
+                    if(galeriaVideos.children().length===0)
+                        return;
+                    sectionVideos+="<li>";
+                    let src=$(v).find("enlace").text();
+                    let alt="Video de: "+nombreHito;
+                    let video =`<video src="${src}" alt="${alt}"></video>`;
+                    sectionVideos+=video;
+                    sectionVideos+="</li>";
                 })
+                sectionVideos+="</section>";
                 rutaHTML += "<h3>Hitos</h3>";
                 rutaHTML += "<ul>";
                 rutaHTML += "<li>Distancia entre hitos: " + distanciaEntreHitos + "</li>";
                 rutaHTML += "<li>Nombre del hito: " + nombreHito + "</li>";
                 rutaHTML += "<li>Descripción: " + descripcionHito + "</li>";
                 rutaHTML += "<li>Coordenadas: Latitud: " + coordenadasHito.latitud + ", Longitud: " + coordenadasHito.longitud + "</li>";
-                rutaHTML += "<li>Galería de fotografías" +"<ul>" +"<li>sectionFotos</li>"+"</ul>"+"</li>";
-                rutaHTML += "<li>Galería de Videos" +"<ul><li>sectionVideos</li></ul>"+"</li>"
+                rutaHTML += "<li>Galería de fotografías" +"<ul>"+sectionFotos+"</ul>"+"</li>";
+                rutaHTML += "<li>Galería de Videos" +"<ul>"+sectionVideos+"</ul>"+"</li>"
                 rutaHTML += "</ul>";
             })
          rutaHTML += "</section>"
@@ -114,9 +126,8 @@ class Rutas{
         var tamaño= "&size=500x300";
         let idioma="&language=es"
         var marcadores = "&markers=color:red%7Clabel:S%7C" + strMarker;
-        var sensor = "&sensor=false";
-        let path="color:0x0000ff|weight:5|"+strPath;
-        let imagenMapa = url + tamaño +idioma+ marcadores + path+sensor + apiKeyGoogleMaps;
+        let path="&path=color:0xff00ff|weight:5|"+strPath;
+        let imagenMapa = url + tamaño +idioma+ marcadores + path + apiKeyGoogleMaps;
         let imagen = document.createElement("img");
         imagen.src=imagenMapa;
         imagen.alt='Mapa estático google';
@@ -149,7 +160,7 @@ class Rutas{
         let containerSVG ="<section>"
         containerSVG+="<h3>Altimetría de la ruta</h3>"
         let svg=`<svg height="${maximoY}" width="${maximoX}" xmlns=\"http://www.w3.org/2000/svg\">`;
-        svg+= `<polygon points="${str}" style="fill:lime;stroke:purple;stroke-width:3"/>`
+        svg+= `<polygon points="${str}"/>`
         svg+="Sorry, your browser does not support inline SVG."
         svg+="</svg>";
         containerSVG+=svg;

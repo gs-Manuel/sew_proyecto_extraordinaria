@@ -117,11 +117,9 @@ class Rutas{
             strMarker+=coordenadasLatitud[i]+","+coordenadasLongitud[i]+"%7C";
             strPath+=coordenadasLatitud[i]+","+coordenadasLongitud[i]+"|";
         }
-
         let section = document.createElement("section");
         let title=document.createElement("h3");
         title.textContent="Mapa de la ruta";
-
         var url = "https://maps.googleapis.com/maps/api/staticmap?";
         var tamaño= "&size=500x300";
         let idioma="&language=es"
@@ -133,7 +131,6 @@ class Rutas{
         imagen.alt='Mapa estático google';
         section.appendChild(title);
         section.appendChild(imagen);
-
         return section;
     }
     traducirSVG(ruta){

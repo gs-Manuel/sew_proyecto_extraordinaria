@@ -5,7 +5,7 @@
     <title>Explorando Murcia - Reservas</title>
     <meta name="author" content="Manuel González Santos"/>
     <meta name="description" content="Reserva"/>
-    <meta name ="keywords" content = "HTML5,CSS"/>
+    <meta name ="keywords" content = "HTML5,CSS,PHP"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="estilo/estilo.css"/>
     <link rel="stylesheet" type="text/css" href="estilo/layout.css"/>
@@ -22,50 +22,65 @@
             <a tabindex="6" accesskey="e" href="reservas.php">Reservas</a>
         </nav>
     </header>
-    <article>
-        <?php
-         if (isset($a)) {
+    <?php
+    session_start();
+    if (!isset($_SESSION['usuario'])) {
         ?>
-        <form>
+    <article>
+        <form method="post" action="php/usuarios/InsertarUsuario.php">
             <fieldset>
                 <legend>Registro</legend>
                 <section>
                     <label>Nombre
-                        <input type="text" name="nombre">
+                        <input type="text" name="nombre" required="true">
                     </label>
                     <label>Email
-                        <input type="email" name="email">
+                        <input type="email" name="email" required="true">
                     </label>
                     <label>Contraseña
-                        <input type="password" name="contraseña">
+                        <input type="password" name="contraseña" required="true">
                     </label>
                 </section>
             </fieldset>
-            <button>Registrarse</button>
+            <button type="submit">Registrarse</button>
         </form>
-        <?php
-         }
-        ?>
-        <form>
+        <form  method="post" action="php/usuarios/ComprobarUsuario.php">
             <fieldset>
                 <legend>Identificación</legend>
                 <section>
                     <label>Email
-                        <input type="email" name="email">
+                        <input type="email" name="email" required="true">
                     </label>
                     <label>Contraseña
-                        <input type="password" name="contraseña">
+                        <input type="password" name="contraseña" required="true">
                     </label>
                 </section>
             </fieldset>
-            <button>Identificarse</button>
+            <button type="submit">Identificarse</button>
         </form>
     </article>
+    <?php
+    }
+    ?>
+    <?php
+        if (isset($_SESSION['usuario'])) {
+    ?>
     <section>
-        <form>
-
+        <form method="post" action="php/reservas/HacerReserva.php">
+            <fieldset>
+                <legend>Reservar</legend>
+                <section>
+                    <?php
+                    require "php/reservas/ObtenerRecursosTuristicos.php";
+                    ?>
+                </section>
+            </fieldset>
+            <button type="submit">Hacer Reserva</button>
         </form>
     </section>
+    <?php
+    }
+    ?>
 </body>
 <script>
 

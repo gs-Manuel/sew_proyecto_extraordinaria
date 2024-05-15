@@ -3,8 +3,8 @@
     {
         //Cambiar cuando se despliegue en la nube al server de azure
         private $servername = "localhost:3306";
-        private $username = "root";
-        private $password = "";
+        private $username = "pepito";
+        private $password = "=Pepp3ron1Pizza";
         private $dbname = "sew";
         private $conn = null;
         public function __construct()

@@ -2,9 +2,11 @@
     class Conexion
     {
         //Cambiar cuando se despliegue en la nube al server de azure
+        //username= pepito
+        //password=Pepp3ron1Pizza
         private $servername = "localhost:3306";
-        private $username = "pepito";
-        private $password = "=Pepp3ron1Pizza";
+        private $username = "root";
+        private $password = "=";
         private $dbname = "sew";
         private $conn = null;
         public function __construct()

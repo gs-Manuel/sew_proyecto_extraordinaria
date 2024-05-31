@@ -57,7 +57,7 @@ button {
  border: none;
  border-radius: 0.3em;
  cursor: pointer;
- background-color: #4CAF50;
+ background-color: #295B2B;
  color: white;
  transition: background-color 0.3s;
 }
@@ -121,10 +121,6 @@ polygon{
  /**Especificidad: 013*/
  article>section>img[data-state="active"]{
      display:block;
- }
- /**Especificidad: 013*/
- section > ul > li:nth-of-type(3){
-     color: #DF265E;
  }
  /*TODO: Preguntar que hay que indicar en la redefinición de font-size*/
  @media only screen and (max-width: 600px) {

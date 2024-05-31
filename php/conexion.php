@@ -6,7 +6,7 @@
         //password=Pepp3ron1Pizza
         private $servername = "localhost:3306";
         private $username = "root";
-        private $password = "=";
+        private $password = "";
         private $dbname = "sew";
         private $conn = null;
         public function __construct()

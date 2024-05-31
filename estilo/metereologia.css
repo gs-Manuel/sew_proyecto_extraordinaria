@@ -4,7 +4,3 @@ article>section{
     display:flex;
     border-bottom: 0.1em solid #003060;
 }
-/*Especificidad: 002*/
-article>section>*{
-    padding:1em;
-}

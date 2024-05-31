@@ -57,7 +57,7 @@ class Rutas{
                     longitud: $(hito).find("coordenadas longitud").text()
                 };
                 let galeriaFotografias=$(hito).find("galeria_fotografias");
-                let sectionFotos ="<section>";
+                let sectionFotos ="<ul>";
                 galeriaFotografias.each((i,fotografia)=>{
                     if(galeriaFotografias.children().length===0)
                         return;
@@ -68,8 +68,8 @@ class Rutas{
                     sectionFotos+=img;
                     sectionFotos+="</li>";
                 })
-                sectionFotos+="</section>";
-                let sectionVideos ="<section>";
+                sectionFotos+="</ul>";
+                let sectionVideos ="<ul>";
                 let galeriaVideos=$(hito).find("galeria_videos");
                 galeriaVideos.each((i,v)=>{
                     if(galeriaVideos.children().length===0)
@@ -81,15 +81,15 @@ class Rutas{
                     sectionVideos+=video;
                     sectionVideos+="</li>";
                 })
-                sectionVideos+="</section>";
+                sectionVideos+="</ul>";
                 rutaHTML += "<h3>Hitos</h3>";
                 rutaHTML += "<ul>";
                 rutaHTML += "<li>Distancia entre hitos: " + distanciaEntreHitos + "</li>";
                 rutaHTML += "<li>Nombre del hito: " + nombreHito + "</li>";
                 rutaHTML += "<li>Descripción: " + descripcionHito + "</li>";
                 rutaHTML += "<li>Coordenadas: Latitud: " + coordenadasHito.latitud + ", Longitud: " + coordenadasHito.longitud + "</li>";
-                rutaHTML += "<li>Galería de fotografías" +"<ul>"+sectionFotos+"</ul>"+"</li>";
-                rutaHTML += "<li>Galería de Videos" +"<ul>"+sectionVideos+"</ul>"+"</li>"
+                rutaHTML += "<li>Galería de fotografías" +sectionFotos+"</li>";
+                rutaHTML += "<li>Galería de Videos" +sectionVideos+"</li>"
                 rutaHTML += "</ul>";
             })
          rutaHTML += "</section>"
@@ -115,7 +115,7 @@ class Rutas{
                 break;
             }
             strMarker+=coordenadasLatitud[i]+","+coordenadasLongitud[i]+"%7C";
-            strPath+=coordenadasLatitud[i]+","+coordenadasLongitud[i]+"|";
+            strPath+=coordenadasLatitud[i]+","+coordenadasLongitud[i]+"%7C";
         }
         let section = document.createElement("section");
         let title=document.createElement("h3");
@@ -124,7 +124,7 @@ class Rutas{
         var tamaño= "&size=500x300";
         let idioma="&language=es"
         var marcadores = "&markers=color:red%7Clabel:S%7C" + strMarker;
-        let path="&path=color:0xff00ff|weight:5|"+strPath;
+        let path="&path=color:0xff00ff%7Cweight:5%7C"+strPath;
         let imagenMapa = url + tamaño +idioma+ marcadores + path + apiKeyGoogleMaps;
         let imagen = document.createElement("img");
         imagen.src=imagenMapa;
@@ -158,7 +158,6 @@ class Rutas{
         containerSVG+="<h3>Altimetría de la ruta</h3>"
         let svg=`<svg height="${maximoY}" width="${maximoX}" xmlns=\"http://www.w3.org/2000/svg\">`;
         svg+= `<polygon points="${str}"/>`
-        svg+="Sorry, your browser does not support inline SVG."
         svg+="</svg>";
         containerSVG+=svg;
         containerSVG+="</section"

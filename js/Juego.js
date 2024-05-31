@@ -49,10 +49,8 @@ class Juego{
         for(let i = 0;i<this.numeroPreguntas;i++){
             let fieldset=document.createElement("fieldset");
             let legend=document.createElement("legend");
-            let section = document.createElement("section");
             legend.textContent=`Pregunta ${i+1} :${this.preguntas[i]}`
             fieldset.appendChild(legend);
-            fieldset.appendChild(section);
             let arrayPregunta = [];
             arrayPregunta.push(this.respuestasCorrectas[i]);
             this.respuestasIncorrectas[i].forEach(element=>{
@@ -67,7 +65,7 @@ class Juego{
                 input.name=`p${i+1}`;
                 input.value=arrayPregunta[j];
                 label.appendChild(input);
-                section.appendChild(label);
+                fieldset.appendChild(label);
             }
             this.form.appendChild(fieldset);
         }

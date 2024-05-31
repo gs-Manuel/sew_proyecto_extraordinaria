@@ -37,6 +37,11 @@ article>section{
    flex-direction: column;
  }
  /**Especificidad: 003*/
+ article>section>*{
+   margin:1em;
+ }
+ /*TODO: Preguntar que hay que indicar en la redefinición de width y height*/
+ /**Especificidad: 003*/
 article>section>img{
   width:33%;
   height: auto;

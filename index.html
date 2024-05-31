@@ -16,7 +16,6 @@
     <script src="js/Mapa.js" ></script>
     <script src="js/UltimaModificacion.js" ></script>
 </head>
-
 <body>
     <header>
         <h1>Explorando Murcia</h1>
@@ -30,8 +29,9 @@
         </nav>
     </header>
     <article>
-        <h2>Carrusel de Fotos</h2>
+        <h2>Principales Recursos Turísticos</h2>
         <section>
+            <h3>Carrusel</h3>
             <button>Anterior</button>
             <img src="multimedia/imagenes/Catedral.jpeg" alt="Catedral de Murcia" />
             <img src="multimedia/imagenes/PalacioEpiscopal.jpeg" alt="Palacio Episcopal" />
@@ -52,15 +52,14 @@
     </article>
     <footer>
         <p>Última modificación de la página principal: </p>
-
     </footer>
+    <script>
+        const carrusel = new Carrusel();
+        const metereologia = new Metereologia();
+        metereologia.obtenerTiempoActual();
+        const noticias = new Noticias();
+        const mapa = new Mapa();
+        const ultimaModificacion = new UltimaModificacion();
+    </script>
 </body>
-<script>
-    const carrusel = new Carrusel();
-    const metereologia = new Metereologia();
-    metereologia.obtenerTiempoActual();
-    const noticias = new Noticias();
-    const mapa = new Mapa();
-    const ultimaModificacion = new UltimaModificacion();
-</script>
 </html>

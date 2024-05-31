@@ -2,7 +2,7 @@
  /**Especificidad: 001*/
  body{
     color:#253703;
-    font-family: "sans-serif";
+    font-family: sans-serif;
     background-color: #B1D4E0;
     font-size:1.3em;
  }
@@ -126,6 +126,7 @@ polygon{
  section > ul > li:nth-of-type(3){
      color: #DF265E;
  }
+ /*TODO: Preguntar que hay que indicar en la redefinición de font-size*/
  @media only screen and (max-width: 600px) {
   /**Especificidad:001*/
  h1{

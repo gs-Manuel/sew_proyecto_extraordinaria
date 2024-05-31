@@ -26,39 +26,36 @@
     session_start();
     if (!isset($_SESSION['usuario'])) {
         ?>
-    <article>
+    <section>
+        <h2>Formularios</h2>
         <form method="post" action="php/usuarios/InsertarUsuario.php">
             <fieldset>
                 <legend>Registro</legend>
-                <section>
                     <label>Nombre
-                        <input type="text" name="nombre" required="true">
+                        <input type="text" name="nombre" required="required">
                     </label>
                     <label>Email
-                        <input type="email" name="email" required="true">
+                        <input type="email" name="email" required="required">
                     </label>
                     <label>Contraseña
-                        <input type="password" name="contraseña" required="true">
+                        <input type="password" name="contraseña" required="required">
                     </label>
-                </section>
             </fieldset>
             <button type="submit">Registrarse</button>
         </form>
         <form  method="post" action="php/usuarios/ComprobarUsuario.php">
             <fieldset>
                 <legend>Identificación</legend>
-                <section>
                     <label>Email
-                        <input type="email" name="email" required="true">
+                        <input type="email" name="email" required="required">
                     </label>
                     <label>Contraseña
-                        <input type="password" name="contraseña" required="true">
+                        <input type="password" name="contraseña" required="required">
                     </label>
-                </section>
             </fieldset>
             <button type="submit">Identificarse</button>
         </form>
-    </article>
+    </section>
     <?php
     }
     ?>
@@ -66,14 +63,13 @@
         if (isset($_SESSION['usuario'])) {
     ?>
     <section>
+        <h2>Reservas turísticas</h2>
         <form method="post" action="php/reservas/HacerReserva.php">
             <fieldset>
                 <legend>Reservar</legend>
-                <section>
                     <?php
                     require "php/reservas/ObtenerRecursosTuristicos.php";
                     ?>
-                </section>
             </fieldset>
             <button type="submit">Hacer Reserva</button>
         </form>
@@ -82,7 +78,4 @@
     }
     ?>
 </body>
-<script>
-
-</script>
 </html>

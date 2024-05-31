@@ -18,8 +18,8 @@ if ($recursos!=null) {
         echo "<p>Tiene lugar desde $fechaInicio hasta $fechaFin</p>";
         echo "<p>$descripcion</p>";
         echo "<label> Seleccionar para reservar";
-        echo "<input type='checkbox' name='$nombre' value='$id'>";
-        echo "<label>";
+        echo "<input type='checkbox' name='$nombre' value='$id' />";
+        echo "</label>";
         echo"</section>";
     }
 }

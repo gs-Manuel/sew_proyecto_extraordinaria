@@ -27,19 +27,19 @@
     <main>
         <h2>Rutas</h2>
     </main>
-</body>
-<script>
-    $(document).ready(() => {
-        $.ajax({
-            url: 'xml/rutas.xml',
-            dataType: "xml",
-            success: function(rutasData) {
+    <script>
+        $(document).ready(() => {
+            $.ajax({
+                url: 'xml/rutas.xml',
+                dataType: "xml",
+                success: function(rutasData) {
                     const rutas = new Rutas(rutasData);
-            },
-            error: function(error) {
-                console.error("Error al cargar el XML:", error);
-            }
+                },
+                error: function(error) {
+                    console.error("Error al cargar el XML:", error);
+                }
+            });
         });
-    });
-</script>
+    </script>
+</body>
 </html>

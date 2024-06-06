@@ -28,11 +28,12 @@ nav>a{
  /**Especificidad: 002*/
 article>section{
   display:flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
 }
  /*Especificidad: 002*/
- fieldset>section{
+ fieldset{
    display:flex;
    flex-direction: column;
  }
@@ -52,6 +53,13 @@ article>section>img{
     width: auto;
     height: 10em;
     }
+  /**Especificidad:001*/
+  nav{
+    display:grid;
+    grid-template-columns: repeat(2,auto);
+    gap: 1em;
+    text-align: center;
+  }
 }
 @media only screen and (max-width: 799px) {
     /**Especificidad:001*/
@@ -67,4 +75,8 @@ article>section>img{
     width: auto;
     height: 20em;
     }
+  article>section>img{
+    width:33%;
+    height: auto;
+  }
 }

@@ -1,4 +1,4 @@
-"use-strict"
+"use strict";
 class Rutas{
     constructor(rutasData) {
         this.rutasXML = rutasData;
@@ -16,22 +16,22 @@ class Rutas{
      traducirHTML(ruta) {
             let fechaInicio = new Date($(ruta).attr("fechaInicio"));
             let horaInicio= new Date($(ruta).attr("horaInicio"));
-            var nombreRuta = $(ruta).find("nombre").first().text();
-            var tipoRuta = $(ruta).find("tipoRuta").text();
-            var medioTransporte = $(ruta).find("medioTransporte").text();
-            var duracionRuta = $(ruta).find("duracionRuta").text();
-            var agencia = $(ruta).find("agencia").text();
-            var descripcion = $(ruta).find("descripcion").text();
-            var personasAdecuadas = $(ruta).find("personasAdecuadas").text();
-            var lugarInicio = $(ruta).find("lugarInicio").text();
-            var direccionInicio = $(ruta).find("direccionInicio").text();
-            var coordenadasInicio = {
+         let nombreRuta = $(ruta).find("nombre").first().text();
+         let tipoRuta = $(ruta).find("tipoRuta").text();
+         let medioTransporte = $(ruta).find("medioTransporte").text();
+         let duracionRuta = $(ruta).find("duracionRuta").text();
+         let agencia = $(ruta).find("agencia").text();
+         let descripcion = $(ruta).find("descripcion").text();
+         let personasAdecuadas = $(ruta).find("personasAdecuadas").text();
+         let lugarInicio = $(ruta).find("lugarInicio").text();
+         let direccionInicio = $(ruta).find("direccionInicio").text();
+         let coordenadasInicio = {
                 latitud: $(ruta).find("coordenadasDireccionInicio coordenadas latitud").text(),
                 longitud: $(ruta).find("coordenadasDireccionInicio coordenadas longitud").text()
             };
-            var recomendacion = $(ruta).find("recomendacion").text();
+         let recomendacion = $(ruta).find("recomendacion").text();
 
-            var rutaHTML = "<section >";
+         let rutaHTML = "<section >";
             rutaHTML += "<h2>" + nombreRuta + "</h2>";
             rutaHTML += "<ul>";
             rutaHTML += "<li>Fecha de Inicio: " + fechaInicio.toLocaleDateString() + "</li>";
@@ -47,7 +47,7 @@ class Rutas{
             rutaHTML += "<li>Coordenadas: Latitud: " + coordenadasInicio.latitud + ", Longitud: " + coordenadasInicio.longitud + "</li>";
             rutaHTML += "<li>Recomendación: " + recomendacion + " (1-10)</li>";
             rutaHTML += "</ul>";
-            var hitos = $(ruta).find("hito");
+         let hitos = $(ruta).find("hito");
             hitos.each((i,hito)=>{
                 let distanciaEntreHitos=$(hito).find("distanciaEntreHitos").text();
                 let nombreHito = $(hito).find("nombre").text();
@@ -64,7 +64,7 @@ class Rutas{
                     sectionFotos+="<li>";
                     let src=$(fotografia).find("enlace").text();
                     let alt="Fotografía de: "+nombreHito;
-                    let img =`<img src="${src}" alt="${alt}"></img>`;
+                    let img =`<img src="${src}" alt="${alt}" />`;
                     sectionFotos+=img;
                     sectionFotos+="</li>";
                 })
@@ -76,8 +76,7 @@ class Rutas{
                         return;
                     sectionVideos+="<li>";
                     let src=$(v).find("enlace").text();
-                    let alt="Video de: "+nombreHito;
-                    let video =`<video src="${src}" alt="${alt}"></video>`;
+                    let video =`<video src="${src}"></video>`;
                     sectionVideos+=video;
                     sectionVideos+="</li>";
                 })
@@ -120,12 +119,12 @@ class Rutas{
         let section = document.createElement("section");
         let title=document.createElement("h3");
         title.textContent="Mapa de la ruta";
-        var url = "https://maps.googleapis.com/maps/api/staticmap?";
-        var tamaño= "&size=500x300";
+        let url = "https://maps.googleapis.com/maps/api/staticmap?";
+        let tam= "&size=500x300";
         let idioma="&language=es"
-        var marcadores = "&markers=color:red%7Clabel:S%7C" + strMarker;
+        let marcadores = "&markers=color:red%7Clabel:S%7C" + strMarker;
         let path="&path=color:0xff00ff%7Cweight:5%7C"+strPath;
-        let imagenMapa = url + tamaño +idioma+ marcadores + path + apiKeyGoogleMaps;
+        let imagenMapa = url + tam +idioma+ marcadores + path + apiKeyGoogleMaps;
         let imagen = document.createElement("img");
         imagen.src=imagenMapa;
         imagen.alt='Mapa estático google';

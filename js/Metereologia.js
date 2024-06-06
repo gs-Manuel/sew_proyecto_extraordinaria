@@ -1,4 +1,4 @@
-"use-strict"
+"use strict";
 class Metereologia{
     constructor() {
         this.last_api_call  = null;

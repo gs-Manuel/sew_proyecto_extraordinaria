@@ -1,4 +1,4 @@
-"use-strict"
+"use strict";
 class Noticias{
     constructor(){
         this.date= new Date(Date.now())
@@ -6,7 +6,7 @@ class Noticias{
         this.apiUrl = `https://newsapi.org/v2/everything?q=murcia&language=es&to=${this.date.toLocaleDateString()}&sortBy=relevancy&apiKey=${this.apiKey}`;
         this.last_api_call  = null;
         this.last_api_result = null;
-        this.obtenerNoticias();
+        this.obtenerNoticias().then();
     }
     async obtenerNoticias(){
         if (this.last_api_call === null || this.last_api_call + (60 * 60 * 1000) < Date.now()) {//una llamada cada hora
@@ -14,18 +14,17 @@ class Noticias{
             const responseJSON = await response.json();
             this.last_api_call =new Date(Date.now());
             this.last_api_result=responseJSON;
-            this.mostrarNoticias(responseJSON)
+            this.mostrarNoticias(responseJSON).then()
 
         }else {
-            this.mostrarNoticias(this.last_api_result);
+            this.mostrarNoticias(this.last_api_result).then();
         }
     }
     async mostrarNoticias(data){
-        console.log(data)
         const contenedorNoticias = document.querySelector("article:last-of-type")
         let lastApiCallArticle = document.createElement("article")
         let lastApiCall = document.createElement("p");
-        lastApiCall.textContent+="La última vez que se cargaron noticias fue: "+this.last_api_call.toLocaleString('es');
+        lastApiCall.textContent+="La última vez que se cargaron noticias fue: "+this.last_api_call.toLocaleString();
         lastApiCallArticle.appendChild(lastApiCall);
         contenedorNoticias.appendChild(lastApiCallArticle);
         for (let i = 0; i < 4; i++) {

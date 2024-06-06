@@ -1,4 +1,4 @@
-"use-strict"
+"use strict";
 class Juego{
     constructor() {
         this.form = document.querySelector("form");

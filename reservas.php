@@ -6,7 +6,7 @@
     <meta name="author" content="Manuel González Santos"/>
     <meta name="description" content="Reserva"/>
     <meta name ="keywords" content = "HTML5,CSS,PHP"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" type="text/css" href="estilo/estilo.css"/>
     <link rel="stylesheet" type="text/css" href="estilo/layout.css"/>
 </head>

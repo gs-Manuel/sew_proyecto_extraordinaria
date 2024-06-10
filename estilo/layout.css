@@ -2,9 +2,8 @@
 /**Especificidad: 001*/
 nav{
   display:grid;
-  grid-template-columns: repeat(3,auto); 
+  grid-template-columns: repeat(3,auto);
   gap: 1em;
-  text-align: center;
 }
 /**Especificidad: 001*/
 h1,h2,h3,h4{
@@ -32,7 +31,7 @@ article>section{
   justify-content: space-between;
   align-items: center;
 }
- /*Especificidad: 002*/
+ /*Especificidad: 001*/
  fieldset{
    display:flex;
    flex-direction: column;
@@ -41,7 +40,6 @@ article>section{
  article>section>*{
    margin:1em;
  }
- /*TODO: Preguntar que hay que indicar en la redefinición de width y height*/
  /**Especificidad: 003*/
 article>section>img{
   width:33%;
@@ -55,10 +53,7 @@ article>section>img{
     }
   /**Especificidad:001*/
   nav{
-    display:grid;
     grid-template-columns: repeat(2,auto);
-    gap: 1em;
-    text-align: center;
   }
 }
 @media only screen and (max-width: 799px) {

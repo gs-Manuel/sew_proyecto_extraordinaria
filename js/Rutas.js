@@ -9,13 +9,11 @@ class Rutas{
         const main = $("main");
         $.each(rutas, (i, ruta) => {
             main.append(this.traducirHTML(ruta));
-            main.append(this.traducirKML(ruta));
-            main.append(this.traducirSVG(ruta));
         })
     }
      traducirHTML(ruta) {
-            let fechaInicio = new Date($(ruta).attr("fechaInicio"));
-            let horaInicio= new Date($(ruta).attr("horaInicio"));
+        let fechaInicio = new Date($(ruta).attr("fechaInicio"));
+        let horaInicio= new Date($(ruta).attr("horaInicio"));
          let nombreRuta = $(ruta).find("nombre").first().text();
          let tipoRuta = $(ruta).find("tipoRuta").text();
          let medioTransporte = $(ruta).find("medioTransporte").text();
@@ -31,11 +29,13 @@ class Rutas{
             };
          let recomendacion = $(ruta).find("recomendacion").text();
 
-         let rutaHTML = "<section >";
-            rutaHTML += "<h2>" + nombreRuta + "</h2>";
-            rutaHTML += "<ul>";
-            rutaHTML += "<li>Fecha de Inicio: " + fechaInicio.toLocaleDateString() + "</li>";
-            rutaHTML += "<li>Hora de Inicio: " + horaInicio.toLocaleTimeString() + "</li>";
+         let rutaHTML = "<article>";
+            rutaHTML += "<header>";
+            rutaHTML += "<h3>" + nombreRuta + "</h3>";
+            rutaHTML += "<p>Fecha de Inicio: " + fechaInicio.toLocaleDateString() + "</p>";
+            rutaHTML += "<p>Hora de Inicio: " + horaInicio.toLocaleTimeString() + "</p>";
+            rutaHTML += "</header>";
+             rutaHTML += "<ul>";
             rutaHTML += "<li>Tipo de ruta: " + tipoRuta + "</li>";
             rutaHTML += "<li>Medio de transporte: " + medioTransporte + "</li>";
             rutaHTML += "<li>Duración: " + duracionRuta + "</li>";
@@ -44,9 +44,7 @@ class Rutas{
             rutaHTML += "<li>Personas adecuadas: " + personasAdecuadas + "</li>";
             rutaHTML += "<li>Lugar de inicio: " + lugarInicio + "</li>";
             rutaHTML += "<li>Dirección de inicio: " + direccionInicio + "</li>";
-            rutaHTML += "<li>Coordenadas: Latitud: " + coordenadasInicio.latitud + ", Longitud: " + coordenadasInicio.longitud + "</li>";
-            rutaHTML += "<li>Recomendación: " + recomendacion + " (1-10)</li>";
-            rutaHTML += "</ul>";
+             rutaHTML += "</ul>";
          let hitos = $(ruta).find("hito");
             hitos.each((i,hito)=>{
                 let distanciaEntreHitos=$(hito).find("distanciaEntreHitos").text();
@@ -57,41 +55,47 @@ class Rutas{
                     longitud: $(hito).find("coordenadas longitud").text()
                 };
                 let galeriaFotografias=$(hito).find("galeria_fotografias");
-                let sectionFotos ="<ul>";
-                galeriaFotografias.each((i,fotografia)=>{
-                    if(galeriaFotografias.children().length===0)
-                        return;
-                    sectionFotos+="<li>";
-                    let src=$(fotografia).find("enlace").text();
-                    let alt="Fotografía de: "+nombreHito;
-                    let img =`<img src="${src}" alt="${alt}" />`;
-                    sectionFotos+=img;
-                    sectionFotos+="</li>";
-                })
-                sectionFotos+="</ul>";
-                let sectionVideos ="<ul>";
-                let galeriaVideos=$(hito).find("galeria_videos");
-                galeriaVideos.each((i,v)=>{
-                    if(galeriaVideos.children().length===0)
-                        return;
-                    sectionVideos+="<li>";
-                    let src=$(v).find("enlace").text();
-                    let video =`<video src="${src}"></video>`;
-                    sectionVideos+=video;
-                    sectionVideos+="</li>";
-                })
-                sectionVideos+="</ul>";
-                rutaHTML += "<h3>Hitos</h3>";
+                rutaHTML += "<section>"
+                rutaHTML += "<h4>Hitos</h4>";
                 rutaHTML += "<ul>";
                 rutaHTML += "<li>Distancia entre hitos: " + distanciaEntreHitos + "</li>";
                 rutaHTML += "<li>Nombre del hito: " + nombreHito + "</li>";
                 rutaHTML += "<li>Descripción: " + descripcionHito + "</li>";
                 rutaHTML += "<li>Coordenadas: Latitud: " + coordenadasHito.latitud + ", Longitud: " + coordenadasHito.longitud + "</li>";
-                rutaHTML += "<li>Galería de fotografías" +sectionFotos+"</li>";
-                rutaHTML += "<li>Galería de Videos" +sectionVideos+"</li>"
                 rutaHTML += "</ul>";
+                if (galeriaFotografias.children().length > 0) {
+                    let sectionFotos = "<section>";
+                    sectionFotos += "<h5>Galería de Fotografías</h5>";
+                    galeriaFotografias.children().each((i, fotografia) => {
+                        let src = $(fotografia).find("enlace").text();
+                        let alt = "Fotografía de: " + nombreHito;
+                        let img = `<img src="${src}" alt="${alt}" />`;
+                        sectionFotos += img;
+                    });
+                    sectionFotos += "</section>";
+                    rutaHTML += sectionFotos;
+                }
+                let galeriaVideos=$(hito).find("galeria_videos");
+                if (galeriaVideos.children().length > 0) {
+                    let sectionVideos = "<section>";
+                    sectionVideos += "<h5>Galería de Vídeos</h5>";
+                    galeriaVideos.children().each((i, v) => {
+                        let src = $(v).find("enlace").text();
+                        let video = `<video src="${src}"></video>`;
+                        sectionVideos += video;
+                    });
+                    sectionVideos += "</section>";
+                    rutaHTML += sectionVideos;
+                }
+                rutaHTML += "</section>"
             })
-         rutaHTML += "</section>"
+         rutaHTML += this.traducirKML(ruta);
+         rutaHTML += this.traducirSVG(ruta);
+         rutaHTML += "<footer>";
+         rutaHTML += "<p>Coordenadas de inicio: Latitud: " + coordenadasInicio.latitud + ", Longitud: " + coordenadasInicio.longitud + "</p>";
+         rutaHTML += "<p>Recomendación de la ruta: " + recomendacion + " (1-10)</p>";
+         rutaHTML += "</footer>";
+         rutaHTML += "</article>"
         return rutaHTML;
     }
     traducirKML(ruta){
@@ -116,20 +120,17 @@ class Rutas{
             strMarker+=coordenadasLatitud[i]+","+coordenadasLongitud[i]+"%7C";
             strPath+=coordenadasLatitud[i]+","+coordenadasLongitud[i]+"%7C";
         }
-        let section = document.createElement("section");
-        let title=document.createElement("h3");
-        title.textContent="Mapa de la ruta";
+        let section ="<section>";
+        let title="<h3> Mapa de la ruta </h3>";
         let url = "https://maps.googleapis.com/maps/api/staticmap?";
         let tam= "&size=500x300";
         let idioma="&language=es"
         let marcadores = "&markers=color:red%7Clabel:S%7C" + strMarker;
         let path="&path=color:0xff00ff%7Cweight:5%7C"+strPath;
         let imagenMapa = url + tam +idioma+ marcadores + path + apiKeyGoogleMaps;
-        let imagen = document.createElement("img");
-        imagen.src=imagenMapa;
-        imagen.alt='Mapa estático google';
-        section.appendChild(title);
-        section.appendChild(imagen);
+        let imagen = `<img src="${imagenMapa}" alt="Mapa estático google" />`;
+        section+=title;
+        section+=imagen;
         return section;
     }
     traducirSVG(ruta){
@@ -159,7 +160,7 @@ class Rutas{
         svg+= `<polygon points="${str}"/>`
         svg+="</svg>";
         containerSVG+=svg;
-        containerSVG+="</section"
+        containerSVG+="</section>"
         return containerSVG;
     }
 }

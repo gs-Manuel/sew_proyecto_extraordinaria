@@ -122,7 +122,6 @@ polygon{
  article>section>img[data-state="active"]{
      display:block;
  }
- /*TODO: Preguntar que hay que indicar en la redefinición de font-size*/
  @media only screen and (max-width: 600px) {
   /**Especificidad:001*/
  h1{

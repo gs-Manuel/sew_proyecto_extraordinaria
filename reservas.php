@@ -63,10 +63,17 @@
         if (isset($_SESSION['usuario'])) {
     ?>
     <section>
+        <section>
+            <h2>¿Cómo Reservar?</h2>
+            <p>
+                Para reservar, simplemente selecciona aquellos recursos turísticos que quieras reservar,
+                y al final de la página encontrarás el botón para efectuar la reserva.
+            </p>
+        </section>
         <h2>Reservas turísticas</h2>
         <form method="post" action="php/reservas/HacerReserva.php">
             <fieldset>
-                <legend>Reservar</legend>
+                <legend>Recursos turísticos</legend>
                     <?php
                     require "php/reservas/ObtenerRecursosTuristicos.php";
                     ?>

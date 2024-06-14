@@ -1,15 +1,26 @@
  /* Manuel González Santos  -   UO279387*/
  /**Especificidad: 001*/
+ header{
+     margin:0.8em;
+ }
+ /**Especificidad: 001*/
  body{
     color:#253703;
-    font-family: sans-serif;
+     font-family: Arial, sans-serif;
     background-color: #B1D4E0;
-    font-size:1.3em;
+    font-size:1em;
  }
  /**Especificidad: 001*/
  nav{
   font-size: 1.3em;
   color:#003060;
+ }
+ /**Especificidad: 001*/
+ /**Sobreescribe propiedad margin para mejorar la separación visual*/
+ h1,h2,h3,h4{
+     text-align: center;
+     margin-bottom:1em;
+     margin-top: 1em;
  }
  /**Especificidad: 001*/
  h1,h2,h3,caption,legend{
@@ -28,6 +39,16 @@
  /**Especificidad:001*/
  h3,caption,legend{
     font-size:1.5em;
+ }
+ h4{
+     font-size:1.2em;
+ }
+ h5{
+     font-size:1.1em;
+ }
+ h6{
+     font-size:0.9em;
+     font-style: italic;
  }
 /**Especificidad: 001*/
 li,dd,dt {
@@ -54,16 +75,19 @@ th {
 button {
  padding: 0.8em 1.5em;
  font-size: 0.8em;
- border: none;
+border-width: 0.3em;
+border-color: #4f9852;
+border-style:outset;
  border-radius: 0.3em;
  cursor: pointer;
  background-color: #295B2B;
  color: white;
  transition: background-color 0.3s;
+
 }
  /*Especificidad: 001*/
 polygon{
-    fill:lime;
+    fill: #ECF86F;
     stroke:purple;
     stroke-width:3;
 }
@@ -74,8 +98,21 @@ polygon{
  }
  /**Especificidad: 002*/
  nav>a{
-     border-color: #003060;
-     background-color:#93bbc8;
+     border-color: #468cda;
+     background-color: #a6d0e0;
+     padding:0.5em;
+     border-width: 0.3em;
+     border-style:outset;
+     text-align: center;
+ }
+ /**Especificidad: 002*/
+ article>section{
+     background-color: #b1d7ea;
+     margin:0.5em;
+ }
+ /**Especificidad: 003*/
+ article>section>*{
+     margin:0.5em;
  }
  /*Especificidad: 011*/
  button:hover {
@@ -136,4 +173,10 @@ polygon{
    font-size:1.1em;
  }
 }
+ @media only screen and (min-width: 800px) {
+     /**Especificidad: 001*/
+     body{
+         font-size:1.3em;
+     }
+ }
 

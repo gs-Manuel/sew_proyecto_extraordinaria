@@ -25,28 +25,27 @@ class Metereologia{
         }
     }
     imprimirTiempoActual(data){
-        const section = document.createElement("section")
-        const title = document.createElement("h4")
-        const p1 =document.createElement("p");
-        const p2 =document.createElement("p");
-        const p3 =document.createElement("p");
+        const article = document.querySelector("article:nth-of-type(2)")
+        const hour = document.createElement("p")
+        const temperature =document.createElement("p");
+        const pressure =document.createElement("p");
+        const humidity =document.createElement("p");
         const iconUrl = document.createElement("img");
-
         const element = data.list[0];
         const time = new Date(element.dt*1000);
 
-        title.textContent=time.toLocaleTimeString('es');
-        p1.textContent="Temperatura: "+ element.main.temp+" °C";
-        p2.textContent="Presión: "+element.main.pressure+" hPa";
-        p3.textContent="Humedad: "+element.main.humidity+" %";
-        iconUrl.src=`https://openweathermap.org/img/w/${element.weather[0].icon}.png`;
+        hour.textContent=time.toLocaleTimeString('es');
+        temperature.textContent="Temperatura: "+ element.main.temp+" °C";
+        pressure.textContent="Presión: "+element.main.pressure+" hPa";
+        humidity.textContent="Humedad: "+element.main.humidity+" %";
+        iconUrl.src=` https://openweathermap.org/img/wn/${element.weather[0].icon}@4x.png`;
         iconUrl.alt="Icono del tiempo";
-        section.append(title)
-        section.append(p1)
-        section.append(p2)
-        section.append(p3)
-        section.append(iconUrl);
-        $("article:nth-of-type(2)").append(section);
+        article.append(hour)
+        article.append(temperature)
+        article.append(pressure)
+        article.append(humidity)
+        article.append(iconUrl);
+        $("article:nth-of-type(2)").append(article);
     }
     obtenerPrevisionTiempo() {
         if (this.last_api_call === null || this.last_api_call + (14 * 60 * 1000) < Date.now()) {//una llamada cada 14 minutos

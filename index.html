@@ -59,7 +59,12 @@
         metereologia.obtenerTiempoActual();
         const noticias = new Noticias();
         const mapa = new Mapa();
-        const ultimaModificacion = new UltimaModificacion();
+        noticias.obtenerNoticias().then(noticias=>{
+                const ultimaModificacion = new UltimaModificacion(noticias.last_api_call);
+        }).catch((error) => {
+            console.error('Error al obtener las noticias:', error);
+        });
+
     </script>
 </body>
 </html>

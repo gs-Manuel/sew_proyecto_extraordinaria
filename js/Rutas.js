@@ -45,9 +45,11 @@ class Rutas{
             rutaHTML += "<li>Lugar de inicio: " + lugarInicio + "</li>";
             rutaHTML += "<li>Dirección de inicio: " + direccionInicio + "</li>";
              rutaHTML += "</ul>";
+         rutaHTML += "<section>"
+         rutaHTML += "<h4>Hitos de la ruta</h4>";
          let hitos = $(ruta).find("hito");
             hitos.each((i,hito)=>{
-                let distanciaEntreHitos=$(hito).find("distanciaEntreHitos").text();
+                let distanciaEntreHitos=$(hito).attr("distanciaEntreHitos");
                 let nombreHito = $(hito).find("nombre").text();
                 let descripcionHito = $(hito).find("descripcion").text();
                 let coordenadasHito = {
@@ -56,16 +58,15 @@ class Rutas{
                 };
                 let galeriaFotografias=$(hito).find("galeria_fotografias");
                 rutaHTML += "<section>"
-                rutaHTML += "<h4>Hitos</h4>";
+                rutaHTML += `<h5> ${nombreHito} </h5>`;
                 rutaHTML += "<ul>";
                 rutaHTML += "<li>Distancia entre hitos: " + distanciaEntreHitos + "</li>";
-                rutaHTML += "<li>Nombre del hito: " + nombreHito + "</li>";
                 rutaHTML += "<li>Descripción: " + descripcionHito + "</li>";
                 rutaHTML += "<li>Coordenadas: Latitud: " + coordenadasHito.latitud + ", Longitud: " + coordenadasHito.longitud + "</li>";
                 rutaHTML += "</ul>";
                 if (galeriaFotografias.children().length > 0) {
                     let sectionFotos = "<section>";
-                    sectionFotos += "<h5>Galería de Fotografías</h5>";
+                    sectionFotos += "<h6>Galería de Fotografías</h6>";
                     galeriaFotografias.children().each((i, fotografia) => {
                         let src = $(fotografia).find("enlace").text();
                         let alt = "Fotografía de: " + nombreHito;
@@ -78,7 +79,7 @@ class Rutas{
                 let galeriaVideos=$(hito).find("galeria_videos");
                 if (galeriaVideos.children().length > 0) {
                     let sectionVideos = "<section>";
-                    sectionVideos += "<h5>Galería de Vídeos</h5>";
+                    sectionVideos += "<h6>Galería de Vídeos</h6>";
                     galeriaVideos.children().each((i, v) => {
                         let src = $(v).find("enlace").text();
                         let video = `<video src="${src}"></video>`;
@@ -89,6 +90,7 @@ class Rutas{
                 }
                 rutaHTML += "</section>"
             })
+         rutaHTML += "</section>"
          rutaHTML += this.traducirKML(ruta);
          rutaHTML += this.traducirSVG(ruta);
          rutaHTML += "<footer>";
@@ -131,6 +133,7 @@ class Rutas{
         let imagen = `<img src="${imagenMapa}" alt="Mapa estático google" />`;
         section+=title;
         section+=imagen;
+        section+="</section>"
         return section;
     }
     traducirSVG(ruta){

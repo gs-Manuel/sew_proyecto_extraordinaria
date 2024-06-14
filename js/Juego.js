@@ -70,7 +70,7 @@ class Juego{
             this.form.appendChild(fieldset);
         }
         let button = document.createElement("button");
-        button.textContent="Submit";
+        button.textContent="Enviar";
         this.form.appendChild(button);
     }
     addEventListener() {

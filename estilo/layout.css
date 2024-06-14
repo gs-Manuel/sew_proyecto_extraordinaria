@@ -5,10 +5,6 @@ nav{
   grid-template-columns: repeat(3,auto);
   gap: 1em;
 }
-/**Especificidad: 001*/
-h1,h2,h3,h4{
-  text-align: center;
-  }
  /**Especificidad: 001*/
 picture{
     max-width: 100%;
@@ -21,14 +17,9 @@ table{
   border-collapse: collapse;
 }
  /**Especificidad: 002*/
-nav>a{
-  margin: 0.1em;
-}
- /**Especificidad: 002*/
 article>section{
   display:flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
 }
  /*Especificidad: 001*/
@@ -37,14 +28,17 @@ article>section{
    flex-direction: column;
  }
  /**Especificidad: 003*/
- article>section>*{
-   margin:1em;
- }
- /**Especificidad: 003*/
 article>section>img{
-  width:33%;
+  width:50%;
   height: auto;
+  max-width: 20em;
 }
+ /**Especificidad: 004*/
+ main>article>section>img{
+   width:50%;
+   height: auto;
+   max-width: none;
+ }
 @media only screen and (max-width: 465px) {
   /**Especificidad:001*/
   video {
@@ -55,6 +49,12 @@ article>section>img{
   nav{
     grid-template-columns: repeat(2,auto);
   }
+  /**Especificidad:001*/
+  img{
+    width:100%;
+    height: auto;
+    max-width: 20em;
+  }
 }
 @media only screen and (max-width: 799px) {
     /**Especificidad:001*/
@@ -62,7 +62,12 @@ article>section>img{
     width: auto;
     height: 15em;
     }
-
+  /**Especificidad:001*/
+  img{
+    width:100%;
+    height: auto;
+    max-width: 30em;
+  }
 }
 @media only screen and (min-width: 800px) {
     /**Especificidad:001*/
@@ -70,8 +75,4 @@ article>section>img{
     width: auto;
     height: 20em;
     }
-  article>section>img{
-    width:33%;
-    height: auto;
-  }
 }

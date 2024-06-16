@@ -1,4 +1,10 @@
  /* Manuel González Santos  -   UO279387*/
+/*Especificidad: 001*/
+body{
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
 /**Especificidad: 001*/
 nav{
   display:grid;
@@ -6,57 +12,68 @@ nav{
   gap: 1em;
 }
  /**Especificidad: 001*/
-picture{
-    max-width: 100%;
-    height: auto;
-}
- /**Especificidad: 001*/
 table{
   table-layout: fixed;
   width: 100%;
   border-collapse: collapse;
 }
- /**Especificidad: 002*/
+aside{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/*Especificidad: 001*/
+form{
+ display:grid;
+ grid-template-columns: repeat(1,auto);
+}
+/*Especificidad: 001*/
+label{
+ border-width: 0.1em;
+ border-color: #8ebfd7;
+ border-style: groove ;
+ border-radius: 0.5em;
+ margin:0.1em;
+}
+/*Especificidad: 001*/
+fieldset{
+ display:flex;
+ flex-direction: column;
+}
+/**Especificidad: 002*/
 article>section{
   display:flex;
   flex-direction: column;
   align-items: center;
 }
- /*Especificidad: 001*/
- fieldset{
-   display:flex;
-   flex-direction: column;
- }
- /**Especificidad: 003*/
-article>section>img{
-  width:50%;
-  height: auto;
-  max-width: 20em;
+ /**Especificidad: 002*/
+ /* Sobreescribe text-align: center para mostrar el texto a la izq de la página de rutas*/
+main>article>*{
+  text-align: left;
 }
- /**Especificidad: 004*/
- main>article>section>img{
-   width:50%;
-   height: auto;
-   max-width: none;
- }
+/*Especificidad: 004*/
+ /*Principalmente sirve para la página de rutas, para los hitos de cada ruta*/
+main>article>section>section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 @media only screen and (max-width: 465px) {
   /**Especificidad:001*/
   video {
     width: auto;
     height: 10em;
     }
-  /**Especificidad:001*/
+  /**Especificidad:001*/ /*Se redefine grid-template-columns para los dispositivos pequeños, por que en 3 columnas no era adaptable*/
   nav{
     grid-template-columns: repeat(2,auto);
   }
-  /**Especificidad:001*/
-  img{
-    width:100%;
-    height: auto;
-    max-width: 20em;
-  }
+    /**Especificidad:001*/
+    img{
+        max-width: 15em;
+    }
 }
-@media only screen and (max-width: 799px) {
+@media only screen and (min-width: 466px) and (max-width: 799px) {
     /**Especificidad:001*/
   video {
     width: auto;
@@ -64,9 +81,7 @@ article>section>img{
     }
   /**Especificidad:001*/
   img{
-    width:100%;
-    height: auto;
-    max-width: 30em;
+    max-width: 25em;
   }
 }
 @media only screen and (min-width: 800px) {
@@ -74,5 +89,8 @@ article>section>img{
   video {
     width: auto;
     height: 20em;
+    }
+    img{
+        max-width: 35em;
     }
 }

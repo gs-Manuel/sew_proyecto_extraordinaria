@@ -85,7 +85,7 @@ class Metereologia{
             const p5 =document.createElement("p");
             p5.textContent="Humedad: "+element.humidity+" %";
             const iconUrl = document.createElement("img");
-            iconUrl.src=`https://openweathermap.org/img/w/${element.weather[0].icon}.png`;
+            iconUrl.src=`https://openweathermap.org/img/wn/${element.weather[0].icon}@4x.png`;
             iconUrl.alt="Icono del tiempo";
             section.append(title)
             section.append(p1)

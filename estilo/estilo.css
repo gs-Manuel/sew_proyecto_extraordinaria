@@ -1,19 +1,26 @@
  /* Manuel González Santos  -   UO279387*/
  /**Especificidad: 001*/
- header{
-     margin:0.8em;
+ body{
+     font-family: Verdana, sans-serif;
+     background: rgb(177,215,234);
+     background: linear-gradient(90deg, rgba(177,215,234,1) 10%, rgba(199,228,239,1) 50%, rgba(177,215,234,1) 90%);
+     font-size:1em;
  }
  /**Especificidad: 001*/
- body{
-    color:#253703;
-     font-family: Arial, sans-serif;
-    background-color: #B1D4E0;
-    font-size:1em;
+ header{
+     background: rgb(94,166,201);
+     background: linear-gradient(180deg, rgba(94,166,201,1) 10%, rgba(199,228,239,1) 50%, rgba(94,166,201,1) 90%);
+     margin:0.8em;
  }
  /**Especificidad: 001*/
  nav{
   font-size: 1.3em;
   color:#003060;
+ }
+ /**Especificidad: 001*/
+ article{
+     margin:0.5em;
+     text-align: center;
  }
  /**Especificidad: 001*/
  /**Sobreescribe propiedad margin para mejorar la separación visual*/
@@ -33,8 +40,9 @@
  }
  /**Especificidad: 001*/
  h2{
-  background-color: #68BBE3;
-    font-size:3em;
+     background: rgb(142,191,215);
+     background: radial-gradient(circle, rgba(142,191,215,1) 30%, rgba(199,228,239,1) 50%, rgba(142,191,215,1) 70%);
+     font-size:3em;
  }
  /**Especificidad:001*/
  h3,caption,legend{
@@ -60,15 +68,17 @@ dt {
 }
 /**Especificidad: 001*/
 td{
-  border: 0.1em solid rgb(80, 143, 12);
+  border-width: 0.1em;
+    border-color: #6badce;
+    border-style: groove;
+    font-style: italic;
 }
-/**Especificidad: 001*/
-table{
-    background-color: #ECF86F;
- }
+
 /**Especificidad: 001*/
 th {
-    border: 0.1em solid rgb(80, 143, 12);
+    border-width: 0.1em;
+    border-color: #6badce;
+    border-style: groove;
     letter-spacing: 0.1em;
 }
 /*Especificidad: 001*/
@@ -83,7 +93,6 @@ border-style:outset;
  background-color: #295B2B;
  color: white;
  transition: background-color 0.3s;
-
 }
  /*Especificidad: 001*/
 polygon{
@@ -91,11 +100,6 @@ polygon{
     stroke:purple;
     stroke-width:3;
 }
- /**Especificidad: 002*/
- main>section{
-  border: 0.1em solid rgb(80, 143, 12);
-  background-color: #bae498;
- }
  /**Especificidad: 002*/
  nav>a{
      border-color: #468cda;
@@ -107,12 +111,7 @@ polygon{
  }
  /**Especificidad: 002*/
  article>section{
-     background-color: #b1d7ea;
-     margin:0.5em;
- }
- /**Especificidad: 003*/
- article>section>*{
-     margin:0.5em;
+     gap:0.5em;
  }
  /*Especificidad: 011*/
  button:hover {

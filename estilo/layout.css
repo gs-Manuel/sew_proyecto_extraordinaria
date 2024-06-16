@@ -17,6 +17,7 @@ table{
   width: 100%;
   border-collapse: collapse;
 }
+ /**Especificidad: 001*/
 aside{
   display: flex;
   flex-direction: column;
@@ -48,7 +49,7 @@ article>section{
 }
  /**Especificidad: 002*/
  /* Sobreescribe text-align: center para mostrar el texto a la izq de la página de rutas*/
-main>article>*{
+main>article{
   text-align: left;
 }
 /*Especificidad: 004*/
@@ -94,6 +95,7 @@ main>article>section>section{
     width: auto;
     height: 20em;
     }
+    /**Especificidad:001*/
     img{
         max-width: 35em;
     }

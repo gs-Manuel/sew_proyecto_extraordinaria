@@ -48,12 +48,15 @@
  h3,caption,legend{
     font-size:1.5em;
  }
+ /**Especificidad:001*/
  h4{
      font-size:1.2em;
  }
+ /**Especificidad:001*/
  h5{
      font-size:1.1em;
  }
+ /**Especificidad:001*/
  h6{
      font-size:0.9em;
      font-style: italic;
@@ -73,7 +76,6 @@ td{
     border-style: groove;
     font-style: italic;
 }
-
 /**Especificidad: 001*/
 th {
     border-width: 0.1em;

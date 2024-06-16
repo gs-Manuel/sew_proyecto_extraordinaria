@@ -72,6 +72,10 @@ main>article>section>section{
     img{
         max-width: 15em;
     }
+    /*Especificidad:001*/
+    svg{
+        transform: scale(.8);
+    }
 }
 @media only screen and (min-width: 466px) and (max-width: 799px) {
     /**Especificidad:001*/

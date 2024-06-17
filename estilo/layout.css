@@ -18,6 +18,10 @@ table{
   border-collapse: collapse;
 }
  /**Especificidad: 001*/
+article{
+    text-align: center;
+}
+ /**Especificidad: 001*/
 aside{
   display: flex;
   flex-direction: column;
@@ -27,14 +31,6 @@ aside{
 form{
  display:grid;
  grid-template-columns: repeat(1,auto);
-}
-/*Especificidad: 001*/
-label{
- border-width: 0.1em;
- border-color: #8ebfd7;
- border-style: groove ;
- border-radius: 0.5em;
- margin:0.1em;
 }
 /*Especificidad: 001*/
 fieldset{

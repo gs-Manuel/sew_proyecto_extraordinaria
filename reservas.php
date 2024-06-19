@@ -31,13 +31,13 @@
         <form method="post" action="php/usuarios/InsertarUsuario.php">
             <fieldset>
                 <legend>Registro</legend>
-                    <label>Nombre
+                    <label title="nombre">Nombre:
                         <input type="text" name="nombre" required="required">
                     </label>
-                    <label>Email
-                        <input type="email" name="email" required="required">
+                    <label title="email">Email:
+                        <input type="email" name="email" required="required" placeholder="">
                     </label>
-                    <label>Contraseña
+                    <label title="contraseña">Contraseña:
                         <input type="password" name="contraseña" required="required">
                     </label>
             </fieldset>
@@ -46,10 +46,10 @@
         <form  method="post" action="php/usuarios/ComprobarUsuario.php">
             <fieldset>
                 <legend>Identificación</legend>
-                    <label>Email
+                    <label title="email">Email
                         <input type="email" name="email" required="required">
                     </label>
-                    <label>Contraseña
+                    <label title="contraseña">Contraseña
                         <input type="password" name="contraseña" required="required">
                     </label>
             </fieldset>

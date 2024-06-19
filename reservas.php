@@ -32,12 +32,15 @@
             <fieldset>
                 <legend>Registro</legend>
                     <label for="nombreRegistro">Nombre:
+                        <!--Ponemos el atributo id para asociarlo a su label correspondiente, de otra manera nos da un error de accesibilidad-->
                         <input type="text" name="nombre" id= "nombreRegistro" required="required">
                     </label>
                     <label for ="emailRegistro">Email:
+                        <!--Ponemos el atributo id para asociarlo a su label correspondiente, de otra manera nos da un error de accesibilidad-->
                         <input type="email" name="email" required="required" id= "emailRegistro" placeholder="prueba@outlook.com">
                     </label>
                     <label for="contraseñaRegistro">Contraseña:
+                        <!--Ponemos el atributo id para asociarlo a su label correspondiente, de otra manera nos da un error de accesibilidad-->
                         <input type="password" name="contraseña" id="contraseñaRegistro" required="required">
                     </label>
             </fieldset>
@@ -47,9 +50,11 @@
             <fieldset>
                 <legend>Identificación</legend>
                     <label for="emailIdentificacion">Email:
+                        <!--Ponemos el atributo id para asociarlo a su label correspondiente, de otra manera nos da un error de accesibilidad-->
                         <input type="email" name="email" required="required" id= "emailIdentificacion" placeholder="prueba@outlook.com">
                     </label>
                     <label for="contraseñaIdentificacion">Contraseña:
+                        <!--Ponemos el atributo id para asociarlo a su label correspondiente, de otra manera nos da un error de accesibilidad-->
                         <input type="password" name="contraseña" id="contraseñaIdentificacion" required="required">
                     </label>
             </fieldset>

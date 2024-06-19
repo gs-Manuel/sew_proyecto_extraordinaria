@@ -61,14 +61,12 @@
         const mapa = new Mapa();
         let ultimaModificacion;
         noticias.obtenerNoticias().then(noticias=>{
-            throw new Error;
             ultimaModificacion = new UltimaModificacion(noticias.last_api_call);
         }).catch((error) => {
             console.error('Error al obtener las noticias:', error);
             document.querySelector('article:nth-of-type(4)').remove()
             ultimaModificacion=new UltimaModificacion()
         });
-
     </script>
 </body>
 </html>

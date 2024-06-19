@@ -31,14 +31,14 @@
         <form method="post" action="php/usuarios/InsertarUsuario.php">
             <fieldset>
                 <legend>Registro</legend>
-                    <label content="Nombre:">Nombre:
-                        <input type="text" name="nombre" required="required">
+                    <label for="nombreRegistro">Nombre:
+                        <input type="text" name="nombre" id= "nombreRegistro" required="required">
                     </label>
-                    <label content ="Email:">Email:
-                        <input type="email" name="email" required="required" placeholder="prueba@outlook.com">
+                    <label for ="emailRegistro">Email:
+                        <input type="email" name="email" required="required" id= "emailRegistro" placeholder="prueba@outlook.com">
                     </label>
-                    <label content="Contraseña:">Contraseña:
-                        <input type="password" name="contraseña" required="required">
+                    <label for="contraseñaRegistro">Contraseña:
+                        <input type="password" name="contraseña" id="contraseñaRegistro" required="required">
                     </label>
             </fieldset>
             <button type="submit">Registrarse</button>
@@ -46,11 +46,11 @@
         <form  method="post" action="php/usuarios/ComprobarUsuario.php">
             <fieldset>
                 <legend>Identificación</legend>
-                    <label content="Email:">Email:
-                        <input type="email" name="email" required="required" placeholder="prueba@outlook.com">
+                    <label for="emailIdentificacion">Email:
+                        <input type="email" name="email" required="required" id= "emailIdentificacion" placeholder="prueba@outlook.com">
                     </label>
-                    <label content="Contraseña:">Contraseña:
-                        <input type="password" name="contraseña" required="required">
+                    <label for="contraseñaIdentificacion">Contraseña:
+                        <input type="password" name="contraseña" id="contraseñaIdentificacion" required="required">
                     </label>
             </fieldset>
             <button type="submit">Identificarse</button>

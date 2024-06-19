@@ -2,7 +2,12 @@
 class UltimaModificacion{
     constructor(lastNoticias) {
         this.contenedor = document.querySelector("footer");
-        this.lastNoticiasApiCall = lastNoticias;
+        if(lastNoticias===null || lastNoticias===undefined) {
+            this.lastNoticiasApiCall = new Date(document.lastModified)-1000;
+        }else{
+            this.lastNoticiasApiCall = lastNoticias;
+        }
+
         this.mostrarUltimaModificacion(this.contenedor);
     }
     mostrarUltimaModificacion(contenedor){

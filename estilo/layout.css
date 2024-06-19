@@ -61,7 +61,9 @@ main>article>section>section{
     width: auto;
     height: 10em;
     }
-  /**Especificidad:001*/ /*Se redefine grid-template-columns para los dispositivos pequeños, por que en 3 columnas no era adaptable*/
+  /**Especificidad:001
+  Se redefine grid-template-columns para los dispositivos pequeños
+   porque en 3 columnas no era adaptable*/
   nav{
     grid-template-columns: repeat(2,auto);
   }
@@ -75,23 +77,31 @@ main>article>section>section{
     }
 }
 @media only screen and (min-width: 466px) and (max-width: 799px) {
-    /**Especificidad:001*/
+    /**Especificidad:001
+    Se redefine width y height para lograr la adaptabilidad
+    en dispositivos de este rango de tamaños de pantalla*/
   video {
     width: auto;
     height: 15em;
     }
-  /**Especificidad:001*/
+  /**Especificidad:001*
+  Se redefine max-width para lograr la adaptabilidad
+    en dispositivos de este rango de tamaños de pantalla*/
   img{
     max-width: 25em;
   }
 }
 @media only screen and (min-width: 800px) {
-    /**Especificidad:001*/
+    /**Especificidad:001
+    Se redefine width y height para lograr la adaptabilidad
+    en dispositivos de este rango de tamaños de pantalla*/
   video {
     width: auto;
     height: 20em;
     }
-    /**Especificidad:001*/
+    /**Especificidad:001
+    Se redefine max-width para lograr la adaptabilidad
+    en dispositivos de este rango de tamaños de pantalla*/
     img{
         max-width: 35em;
     }

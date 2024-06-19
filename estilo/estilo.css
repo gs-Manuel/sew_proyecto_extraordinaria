@@ -2,12 +2,14 @@
  /**Especificidad: 001*/
  body{
      font-family: Verdana, sans-serif;
+     color:black;
      background: rgb(177,215,234);
      background: linear-gradient(90deg, rgba(177,215,234,1) 10%, rgba(199,228,239,1) 50%, rgba(177,215,234,1) 90%);
      font-size:1em;
  }
  /**Especificidad: 001*/
  header{
+     color:inherit;
      background: rgb(94,166,201);
      background: linear-gradient(180deg, rgba(94,166,201,1) 10%, rgba(199,228,239,1) 50%, rgba(94,166,201,1) 90%);
      margin:0.8em;
@@ -16,6 +18,7 @@
  nav{
   font-size: 1.3em;
   color:#003060;
+ background-color: transparent;
  }
  /**Especificidad: 001*/
  article{
@@ -29,8 +32,9 @@
      margin-top: 1em;
  }
  /**Especificidad: 001*/
- h1,h2,h3,caption,legend{
+ h1,h3,caption,legend{
     color:#003060;
+     background-color: transparent;
  }
   /**Especificidad: 001*/
  h1{
@@ -39,6 +43,7 @@
  }
  /**Especificidad: 001*/
  h2{
+     color:#003060;
      background: rgb(142,191,215);
      background: radial-gradient(circle, rgba(142,191,215,1) 30%, rgba(199,228,239,1) 50%, rgba(142,191,215,1) 70%);
      font-size:3em;
@@ -111,6 +116,7 @@ polygon{
  }
  /**Especificidad: 002*/
  nav>a{
+     color:black;
      border-color: #468cda;
      background-color: #a6d0e0;
      padding:0.5em;
@@ -125,10 +131,12 @@ polygon{
  /*Especificidad: 011*/
  button:hover {
      background-color: #45a049;
+     color:inherit;
  }
  /*Especificidad: 011*/
  button:active {
      background-color: #3e8e41;
+     color:inherit
  }
  /*Especificidad: 011*/
  button:disabled {
@@ -136,23 +144,16 @@ polygon{
      color: #666666;
      cursor: not-allowed;
  }
- /**Especcificidad: 011*/
- a:link {
-     color: #0C2D48
- }
  /**Especificidad: 011*/
  a:visited {
-     color: #492240;
- }
- /**Especificidad: 011*/
- a:focus {
-     border-bottom: 0.1em solid;
-     background: #0C2D48;
+     color: #5d2d52;
+     background-color: inherit;
  }
  /**Especcificidad: 011*/
  a:hover {
      border-bottom: 0.1em solid;
      background: #68BBE3;
+     color: inherit;
  }
  /**Especcificidad: 011*/
  a:active {
@@ -168,21 +169,25 @@ polygon{
      display:block;
  }
  @media only screen and (max-width: 600px) {
-  /**Especificidad:001*/
+  /**Especificidad:001
+  Se redefine el tamaño del texto para dispositivos en este rango de tamaño de pantalla*/
  h1{
    font-size:2.5em;
  }
-  /**Especificidad:001*/
+  /**Especificidad:001
+  Se redefine el tamaño del texto para dispositivos en este rango de tamaño de pantalla*/
  h2{
    font-size:1.5em;
  }
-  /**Especificidad:001*/
+  /**Especificidad:001
+  Se redefine el tamaño del texto para dispositivos en este rango de tamaño de pantalla*/
  h3{
    font-size:1.1em;
  }
 }
  @media only screen and (min-width: 800px) {
-     /**Especificidad: 001*/
+     /**Especificidad: 001
+     Se redefine el tamaño del texto para dispositivos en este rango de tamaño de pantalla*/
      body{
          font-size:1.3em;
      }
